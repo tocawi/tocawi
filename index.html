@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToCAWI - Tails of Care Animal Welfare Initiative</title>
-    <!-- Isolated Stylesheet -->
+    <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome 6.5.2 for Social Media Icons -->
+    <!-- FontAwesome icons for 6.5.2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Google Fonts: Orbitron & Inter -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -27,13 +27,13 @@
             <!-- Desktop Navigation Links -->
             <nav class="desktop-nav">
                 <a href="index.html" class="nav-link active">Home</a>
-                <a href="#" class="nav-link">About Us</a>
-                <a href="#" class="nav-link">Our Programs / Services</a>
-                <a href="#" class="nav-link">Get Involved</a>
-                <a href="#" class="nav-link">Blog</a>
-                <a href="#" class="nav-link">Partners & Team</a>
-                <a href="#" class="nav-link">Contact Us</a>
-                <a href="#" class="nav-link">Emergency Info Page</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="programs.html" class="nav-link">Our Programs / Services</a>
+                <a href="get-involved.html" class="nav-link">Get Involved</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="partners.html" class="nav-link">Partners & Team</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+                <a href="emergency.html" class="nav-link">Emergency Info Page</a>
             </nav>
 
             <!-- Hamburger Button for Mobile Menu -->
@@ -48,27 +48,25 @@
     <!-- Full-Screen Mobile Navigation Overlay -->
     <div class="mobile-nav-overlay" id="mobileNav">
         <button class="close-menu" id="menuClose" aria-label="Close Navigation Menu">
-            <i class="fa-solid fa-xmark xmark-icon"></i>
+            <i class="fa-solid xmark-icon fa-xmark"></i>
         </button>
         <nav class="mobile-nav-links">
             <a href="index.html" class="mobile-link active">Home</a>
-            <a href="#" class="mobile-link">About Us</a>
-            <a href="#" class="mobile-link">Our Programs / Services</a>
-            <a href="#" class="mobile-link">Get Involved</a>
-            <a href="#" class="mobile-link">Blog</a>
-            <a href="#" class="mobile-link">Partners & Team</a>
-            <a href="#" class="mobile-link">Contact Us</a>
-            <a href="#" class="mobile-link">Emergency Info Page</a>
+            <a href="about.html" class="mobile-link">About Us</a>
+            <a href="programs.html" class="mobile-link">Our Programs / Services</a>
+            <a href="get-involved.html" class="mobile-link">Get Involved</a>
+            <a href="blog.html" class="mobile-link">Blog</a>
+            <a href="partners.html" class="mobile-link">Partners & Team</a>
+            <a href="contact.html" class="mobile-link">Contact Us</a>
+            <a href="emergency.html" class="mobile-link">Emergency Info Page</a>
         </nav>
     </div>
 
     <main>
-        <!-- Hero Section with Explicit DOM Image Guarantee -->
+        <!-- Hero Section -->
         <section class="hero-section">
-            <!-- Explicit DOM image element ensures proper rendering -->
-            <div class="hero-bg-wrapper">
-                <img src="images/home-hero.jpg" alt="Saving Lives in Kenya Background" class="hero-bg-image">
-            </div>
+            <!-- Explicit Hero Image Tag -->
+            <img src="images/home-hero.jpg" alt="Veterinarian with a dog in a field" class="hero-bg-img">
             <div class="hero-bg-overlay"></div>
             
             <div class="hero-content">
@@ -76,9 +74,9 @@
                 <p class="hero-subtitle">Together, we can end dog-mediated human rabies in Kenya through evidence-based vaccination, humane dog population management, strategic partnerships, and empowered communities.</p>
                 
                 <div class="hero-action-buttons">
-                    <a href="#" class="btn btn-outline">Join Us</a>
-                    <a href="#" class="btn btn-solid">Donate</a>
-                    <a href="#" class="btn btn-outline">Report A Case</a>
+                    <a href="get-involved.html" class="btn btn-outline">Join Us</a>
+                    <a href="donate.html" class="btn btn-solid">Donate</a>
+                    <a href="contact.html" class="btn btn-outline">Report A Case</a>
                 </div>
             </div>
         </section>
@@ -119,7 +117,7 @@
             </div>
         </section>
 
-        <!-- Continuous Running Text Ticker -->
+        <!-- Running Ticker Strip -->
         <div class="running-text-ticker">
             <div class="ticker-track">
                 <span>KNOWLEDGE SAVES LIVES • SCHOOL OUTREACH KENYA • SAFE ANIMAL INTERACTION • VACCINATION ADVOCACY • COMMUNITY EMPOWERMENT • TOCAW-I INITIATIVE •&nbsp;</span>
@@ -171,7 +169,7 @@
                 </div>
 
                 <div class="updates-footer-links">
-                    <a href="#" class="read-all-link">Read All News</a>
+                    <a href="blog.html" class="read-all-link">Read All News</a>
                 </div>
             </div>
         </section>
@@ -180,7 +178,7 @@
     <!-- Footer Area -->
     <footer class="site-footer">
         <div class="footer-container">
-            <!-- Footer Branding -->
+            <!-- Footer Branding Identity -->
             <div class="footer-branding">
                 <img src="images/logo.png" alt="ToCAWI Badge" class="footer-logo-img">
                 <h2 class="footer-logo-title">ToCAWI</h2>
@@ -195,14 +193,14 @@
                 <p><a href="mailto:thetailsofcare@gmail.com" class="footer-email">thetailsofcare@gmail.com</a></p>
             </div>
 
-            <!-- Social Media Icons Grid -->
+            <!-- Social Links Grid Wrapper -->
             <div class="footer-social-wrapper">
-                <a href="https://www.facebook.com/profile.php?id=61574747459709" class="social-icon facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/thetailsofcare?utm_source=qr" class="social-icon instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.youtube.com/channel/UC16gxPmCa0Cgtl37sV5Rrzg" class="social-icon youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://x.com/tailsofcare" class="social-icon x-twitter" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/the-tails-of-care-92ab443bb/" class="social-icon linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://www.tiktok.com/@tailsofcare" class="social-icon tiktok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon x-twitter" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" class="social-icon linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             </div>
 
             <!-- Copyright Declaration Text -->
@@ -213,12 +211,12 @@
         <div class="footer-accent-line"></div>
     </footer>
 
-    <!-- Floating Back to Top Button -->
+    <!-- Floating Back to Top Button Module -->
     <button id="floatingBackToTop" class="floating-top-btn" aria-label="Scroll Back To Top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- Embedded JavaScript for Mobile Menu & Scroll-to-Top Interaction -->
+    <!-- Embedded JavaScript for Mobile Menu State Interaction and Top Scroll -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menuToggle');
@@ -226,19 +224,19 @@
             const menuClose = document.getElementById('menuClose');
             const scrollTopBtn = document.getElementById('floatingBackToTop');
 
-            // Open Mobile Navigation Overlay
+            // Opens mobile overlay view
             menuToggle.addEventListener('click', function() {
                 mobileNav.classList.add('is-active');
-                document.body.style.overflow = 'hidden'; // Lock background scrolling
+                document.body.style.overflow = 'hidden'; // Prevents scrolling behind overlay
             });
 
-            // Close Mobile Navigation Overlay
+            // Closes mobile overlay view
             menuClose.addEventListener('click', function() {
                 mobileNav.classList.remove('is-active');
                 document.body.style.overflow = '';
             });
 
-            // Floating Back-to-Top Button Visibility Handler
+            // Handle scroll positioning triggers for Back-to-Top Button Visibility
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 400) {
                     scrollTopBtn.classList.add('visible');
@@ -247,7 +245,7 @@
                 }
             });
 
-            // Smooth Scroll Back to Top
+            // Smooth scroll action back up to page ceiling
             scrollTopBtn.addEventListener('click', function() {
                 window.scrollTo({
                     top: 0,
