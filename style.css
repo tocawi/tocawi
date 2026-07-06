@@ -637,15 +637,7 @@ a {
 
 /* Tablet Screen Optimizations (Under 1024px) */
 @media (max-width: 1024px) {
-    .logo-text h1 {
-        font-size: 38px;
-    }
-    .logo-text p {
-        font-size: 8.5px;
-    }
-    .hero-title {
-        font-size: 3rem;
-    }
+    /* Removed typography scaling overrides to preserve exact desktop sizing */
     .pillars-grid, 
     .updates-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -655,9 +647,7 @@ a {
 
 /* Smartphone Adjustments (Under 768px) */
 @media (max-width: 768px) {
-    :root {
-        --header-height: var(--header-mobile-height);
-    }
+    /* Maintained the standard header height to naturally embrace the full-scale logo architecture */
 
     .header-container {
         position: relative; /* Context foundation layer to align absolute children dead center */
@@ -672,7 +662,7 @@ a {
     }
 
     .header-logo-img {
-        height: 65px;
+        height: 80px; /* EXACTLY THE SAME SIZE AS DESKTOP */
     }
 
     .logo-area {
@@ -691,21 +681,21 @@ a {
         text-align: center;
     }
 
-    /* Standardized reference structure without letter stretching */
+    /* EXACTLY THE SAME SIZE AS DESKTOP */
     .logo-text h1 {
-        font-size: 34px;
+        font-size: 47px;
         letter-spacing: -0.5px;
         margin-right: 0;
         line-height: 0.95;
     }
 
-    /* Refined using a balanced typography tracking technique (word-spacing offset by a negative margin-right) to match h1 edge-to-edge */
+    /* EXACTLY THE SAME SIZE AS DESKTOP - Natural edge alignment matches image_fcf661.png */
     .logo-text p {
-        font-size: 7.2px;
+        font-size: 10px;
         margin-top: 4px;
         white-space: nowrap;
-        word-spacing: 1.2px; /* Fine-tuned word spacing to distribute content to match ToCAWI's footprint layout */
-        margin-right: -1.2px; /* Offsets trailing spacing to achieve absolute pixel centering precision */
+        word-spacing: 0;
+        margin-right: 0;
     }
 
     .hero-section {
@@ -767,20 +757,5 @@ a {
     .header-container {
         padding: 0 12px;
     }
-
-    .header-logo-img {
-        height: 52px;
-    }
-
-    .logo-text h1 {
-        font-size: 28px;
-        letter-spacing: -0.5px;
-    }
-
-    .logo-text p {
-        font-size: 5.9px;
-        margin-top: 3px;
-        word-spacing: 1.0px;
-        margin-right: -1.0px;
-    }
+    /* Logo, h1, and p overrides removed completely to protect desktop scaling down to the smallest screens */
 }
