@@ -18,8 +18,8 @@
     
     /* Layout Dimensions */
     --max-content-width: 1200px;
-    --header-height: 100px;
-    --header-mobile-height: 85px;
+    --header-height: 110px;
+    --header-mobile-height: 95px;
 }
 
 * {
@@ -100,25 +100,34 @@ a {
 }
 
 .header-logo-img {
-    height: 75px;
+    height: 80px;
     width: auto;
     object-fit: contain;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .logo-text h1 {
     font-family: var(--ff-heading);
     font-weight: 700;
-    font-size: 2.4rem;
+    font-size: 47px; /* Explicit size requested to match image layouts */
     color: #000000;
-    line-height: 1.0;
+    line-height: 0.95;
+    margin: 0;
+    letter-spacing: -0.5px;
 }
 
 .logo-text p {
     font-family: var(--ff-heading);
     font-weight: 700;
-    font-size: 0.88rem;
+    font-size: 10px; /* Explicit proportional size requested */
     color: #000000;
-    margin-top: 3px;
+    margin-top: 4px;
     line-height: 1.1;
     white-space: nowrap;
 }
@@ -131,7 +140,7 @@ a {
 }
 
 .nav-link {
-    font-size: 14px;
+    font-size: 14px; /* Reduced menu text size requested */
     font-weight: 500;
     color: var(--clr-blue-primary);
     position: relative;
@@ -213,7 +222,7 @@ a {
 }
 
 .mobile-link {
-    font-size: 14px;
+    font-size: 14px; /* Reduced mobile navigation text size requested */
     font-weight: 500;
     color: var(--clr-blue-primary);
 }
@@ -227,16 +236,17 @@ a {
    ========================================================================== */
 .hero-section {
     position: relative;
-    min-height: 600px;
+    width: 100%;
+    min-height: 650px; /* Enhanced relative container height for perfect desktop balance */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 80px 24px;
+    padding: 100px 24px;
     overflow: hidden;
 }
 
-/* Hero Background Image Settings */
+/* Hero Background Image Structural Alignment Fixes */
 .hero-bg-img {
     position: absolute;
     top: 0;
@@ -244,6 +254,7 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     z-index: 0;
 }
 
@@ -629,10 +640,10 @@ a {
 /* Tablet & Smaller Screen Optimizations (Under 1024px) */
 @media (max-width: 1024px) {
     .logo-text h1 {
-        font-size: 2.1rem;
+        font-size: 38px;
     }
     .logo-text p {
-        font-size: 0.82rem;
+        font-size: 9px;
     }
     .hero-title {
         font-size: 3rem;
@@ -659,15 +670,16 @@ a {
     }
 
     .header-logo-img {
-        height: 60px;
+        height: 65px;
     }
 
     .logo-text h1 {
-        font-size: 1.9rem;
+        font-size: 34px;
     }
 
     .logo-text p {
-        font-size: 0.73rem;
+        font-size: 8px;
+        margin-top: 2px;
     }
 
     .hero-section {
