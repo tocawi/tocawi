@@ -109,13 +109,13 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; /* Guarantees strict left-alignment matching image_f8e629.png */
 }
 
 .logo-text h1 {
     font-family: var(--ff-heading);
     font-weight: 700;
-    font-size: 47px; /* Explicit size requested to match image layouts */
+    font-size: 47px; /* Explicit base sizing */
     color: #000000;
     line-height: 0.95;
     margin: 0;
@@ -125,11 +125,11 @@ a {
 .logo-text p {
     font-family: var(--ff-heading);
     font-weight: 700;
-    font-size: 10px; /* Explicit proportional size requested */
+    font-size: 10px; /* Explicit proportional layout base size */
     color: #000000;
     margin-top: 4px;
     line-height: 1.1;
-    white-space: nowrap;
+    white-space: nowrap; /* Strictly avoids broken text lines or unaligned multi-line text blocks */
 }
 
 /* Desktop Menu Layout Options */
@@ -140,7 +140,7 @@ a {
 }
 
 .nav-link {
-    font-size: 14px; /* Reduced menu text size requested */
+    font-size: 14px;
     font-weight: 500;
     color: var(--clr-blue-primary);
     position: relative;
@@ -222,7 +222,7 @@ a {
 }
 
 .mobile-link {
-    font-size: 14px; /* Reduced mobile navigation text size requested */
+    font-size: 14px;
     font-weight: 500;
     color: var(--clr-blue-primary);
 }
@@ -237,7 +237,7 @@ a {
 .hero-section {
     position: relative;
     width: 100%;
-    min-height: 650px; /* Enhanced relative container height for perfect desktop balance */
+    min-height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -246,7 +246,6 @@ a {
     overflow: hidden;
 }
 
-/* Hero Background Image Structural Alignment Fixes */
 .hero-bg-img {
     position: absolute;
     top: 0;
@@ -300,7 +299,6 @@ a {
     gap: 20px;
 }
 
-/* Button UI Components */
 .btn {
     display: inline-block;
     padding: 14px 36px;
@@ -637,13 +635,13 @@ a {
    MEDIA QUERY RESPONSIVENESS ADJUSTMENT ENGINES
    ========================================================================== */
 
-/* Tablet & Smaller Screen Optimizations (Under 1024px) */
+/* Tablet Screen Optimizations (Under 1024px) */
 @media (max-width: 1024px) {
     .logo-text h1 {
         font-size: 38px;
     }
     .logo-text p {
-        font-size: 9px;
+        font-size: 8.5px;
     }
     .hero-title {
         font-size: 3rem;
@@ -670,15 +668,16 @@ a {
     }
 
     .header-logo-img {
-        height: 65px;
+        height: 58px; /* Balanced perfectly to align with mobile typography sizing */
     }
 
+    /* Proportional downscaling that guarantees uniform alignment as seen in image_f8e629.png */
     .logo-text h1 {
-        font-size: 34px;
+        font-size: 32px;
     }
 
     .logo-text p {
-        font-size: 8px;
+        font-size: 7.2px;
         margin-top: 2px;
     }
 
@@ -733,5 +732,25 @@ a {
         right: 20px;
         width: 44px;
         height: 44px;
+    }
+}
+
+/* Ultra-Compact Screens (Under 375px) */
+@media (max-width: 375px) {
+    .header-container {
+        padding: 0 14px; /* Increases inner breathing room for small rows */
+    }
+
+    .header-logo-img {
+        height: 48px;
+    }
+
+    .logo-text h1 {
+        font-size: 26px;
+    }
+
+    .logo-text p {
+        font-size: 6px;
+        margin-top: 1px;
     }
 }
