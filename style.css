@@ -671,23 +671,29 @@ a {
         height: 65px;
     }
 
-    /* Centers the stack and expands typography blocks to match each other's visual boundaries perfectly as described in image_f95e4b.png */
+    /* Shifts the text group rightward towards the hamburger menu by increasing the gap spacing */
+    .logo-area {
+        gap: 24px;
+    }
+
+    /* Centers the headers relative to each other natively using the compact footprint reference as requested in image_f95e4b.png */
     .logo-text {
         align-items: center;
         text-align: center;
     }
 
     .logo-text h1 {
-        font-size: 35px;
-        letter-spacing: 0.39em; /* Expands letter spacing across the exact same horizontal footprint as the subtitle */
-        margin-right: -0.39em; /* Counteracts trailing character whitespace to enforce absolute pixel centering */
-        line-height: 1.0;
+        font-size: 36px;
+        letter-spacing: -0.5px; /* Restores pristine, crisp un-stretched layout reference structure */
+        margin-right: 0;
+        line-height: 0.95;
     }
 
     .logo-text p {
-        font-size: 11px;
-        margin-top: 6px;
+        font-size: 8.2px; /* Proportional sizing perfectly adjusted to fit the exact width footprint of the text title above */
+        margin-top: 4px;
         white-space: nowrap;
+        letter-spacing: 0px;
     }
 
     .hero-section {
@@ -754,14 +760,17 @@ a {
         height: 52px;
     }
 
+    .logo-area {
+        gap: 16px;
+    }
+
     .logo-text h1 {
-        font-size: 27px;
-        letter-spacing: 0.39em;
-        margin-right: -0.39em;
+        font-size: 28px;
+        letter-spacing: -0.5px;
     }
 
     .logo-text p {
-        font-size: 8.5px;
-        margin-top: 4px;
+        font-size: 6.4px;
+        margin-top: 3px;
     }
 }
