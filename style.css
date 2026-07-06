@@ -668,22 +668,26 @@ a {
     }
 
     .header-logo-img {
-        height: 65px; /* Sized comfortably to balance with the enlarged text stack */
+        height: 65px;
     }
 
-    /* Centers the logo headers directly below each other and scales them up as requested in image_f95e4b.png */
+    /* Centers the stack and expands typography blocks to match each other's visual boundaries perfectly as described in image_f95e4b.png */
     .logo-text {
         align-items: center;
         text-align: center;
     }
 
     .logo-text h1 {
-        font-size: 44px; /* Significantly enhanced size for mobile prominence */
+        font-size: 35px;
+        letter-spacing: 0.39em; /* Expands letter spacing across the exact same horizontal footprint as the subtitle */
+        margin-right: -0.39em; /* Counteracts trailing character whitespace to enforce absolute pixel centering */
+        line-height: 1.0;
     }
 
     .logo-text p {
-        font-size: 9.8px; /* Boosted proportionately to maintain matching structure */
-        margin-top: 3px;
+        font-size: 11px;
+        margin-top: 6px;
+        white-space: nowrap;
     }
 
     .hero-section {
@@ -751,11 +755,13 @@ a {
     }
 
     .logo-text h1 {
-        font-size: 35px; /* Maintains clean structural scaling for narrow mobile views */
+        font-size: 27px;
+        letter-spacing: 0.39em;
+        margin-right: -0.39em;
     }
 
     .logo-text p {
-        font-size: 8px;
-        margin-top: 2px;
+        font-size: 8.5px;
+        margin-top: 4px;
     }
 }
