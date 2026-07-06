@@ -659,6 +659,10 @@ a {
         --header-height: var(--header-mobile-height);
     }
 
+    .header-container {
+        position: relative; /* Context foundation layer to align absolute children dead center */
+    }
+
     .desktop-nav {
         display: none;
     }
@@ -671,29 +675,37 @@ a {
         height: 65px;
     }
 
-    /* Shifts the text group rightward towards the hamburger menu by increasing the gap spacing */
     .logo-area {
-        gap: 24px;
+        display: flex;
+        align-items: center;
     }
 
-    /* Centers the headers relative to each other natively using the compact footprint reference as requested in image_f95e4b.png */
+    /* Centers both headers exactly in the middle of the header container viewport layout */
     .logo-text {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
+    /* Standardized reference structure without letter stretching */
     .logo-text h1 {
-        font-size: 36px;
-        letter-spacing: -0.5px; /* Restores pristine, crisp un-stretched layout reference structure */
+        font-size: 34px;
+        letter-spacing: -0.5px;
         margin-right: 0;
         line-height: 0.95;
     }
 
+    /* Refined using a balanced typography tracking technique (word-spacing offset by a negative margin-right) to match h1 edge-to-edge */
     .logo-text p {
-        font-size: 8.2px; /* Proportional sizing perfectly adjusted to fit the exact width footprint of the text title above */
+        font-size: 7.2px;
         margin-top: 4px;
         white-space: nowrap;
-        letter-spacing: 0px;
+        word-spacing: 1.2px; /* Fine-tuned word spacing to distribute content to match ToCAWI's footprint layout */
+        margin-right: -1.2px; /* Offsets trailing spacing to achieve absolute pixel centering precision */
     }
 
     .hero-section {
@@ -760,17 +772,15 @@ a {
         height: 52px;
     }
 
-    .logo-area {
-        gap: 16px;
-    }
-
     .logo-text h1 {
         font-size: 28px;
         letter-spacing: -0.5px;
     }
 
     .logo-text p {
-        font-size: 6.4px;
+        font-size: 5.9px;
         margin-top: 3px;
+        word-spacing: 1.0px;
+        margin-right: -1.0px;
     }
 }
