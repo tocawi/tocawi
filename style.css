@@ -1,15 +1,15 @@
 /* ==========================================================================
-   GLOBAL DESIGN VARIABLES & ARCHITECTURE
+   GLOBAL CONFIGURATION & RESET LAUNCHPAD
    ========================================================================== */
 :root {
     /* Color Palette */
-    --clr-blue-primary: #3b5998;
-    --clr-blue-deep: #25448c;
+    --clr-blue-primary: #25448c;
+    --clr-blue-deep: #1e3670;
     --clr-orange-accent: #e07a41;
     --clr-bg-cream: #f6f5f0;
     --clr-bg-white: #ffffff;
     --clr-text-dark: #333333;
-    --clr-text-muted: #555555;
+    --clr-text-muted: #666666;
     
     /* Font Architecture */
     --ff-body: 'Inter', sans-serif;
@@ -18,8 +18,8 @@
     
     /* Layout Dimensions */
     --max-content-width: 1200px;
-    --header-height: 90px;
-    --header-mobile-height: 75px;
+    --header-height: 100px;
+    --header-mobile-height: 85px;
 }
 
 * {
@@ -48,10 +48,10 @@ img {
 a {
     text-decoration: none;
     color: inherit;
-    transition: all 0.25s ease;
+    transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
-/* Layout Utilities */
+/* Common Container Utility */
 .section-container {
     max-width: var(--max-content-width);
     margin: 0 auto;
@@ -62,6 +62,7 @@ a {
     text-align: center;
 }
 
+/* Generic Section Heading Structure */
 .section-title {
     font-family: var(--ff-heading);
     color: var(--clr-blue-deep);
@@ -79,7 +80,7 @@ a {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
 }
 
 .header-container {
@@ -95,19 +96,19 @@ a {
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .header-logo-img {
-    height: 65px;
+    height: 75px;
     width: auto;
     object-fit: contain;
 }
 
 .logo-text h1 {
     font-family: var(--ff-heading);
-    font-weight: 900;
-    font-size: 2.2rem;
+    font-weight: 700;
+    font-size: 2.4rem;
     color: #000000;
     line-height: 1.0;
 }
@@ -115,24 +116,26 @@ a {
 .logo-text p {
     font-family: var(--ff-heading);
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 0.88rem;
     color: #000000;
-    margin-top: 4px;
+    margin-top: 3px;
+    line-height: 1.1;
+    white-space: nowrap;
 }
 
-/* Desktop Navigation Menu */
+/* Desktop Menu Layout Options */
 .desktop-nav {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 22px;
 }
 
 .nav-link {
-    font-size: 0.95rem;
+    font-size: 14px;
     font-weight: 500;
     color: var(--clr-blue-primary);
     position: relative;
-    padding: 6px 0;
+    padding: 4px 0;
 }
 
 .nav-link:hover,
@@ -140,23 +143,17 @@ a {
     color: var(--clr-blue-deep);
 }
 
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--clr-blue-deep);
+.nav-link.active {
+    text-decoration: underline;
 }
 
-/* Hamburger Button for Mobile View */
+/* Mobile Toggle Hamburger Icon Settings */
 .menu-toggle {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 21px;
+    width: 28px;
+    height: 18px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -166,13 +163,13 @@ a {
 
 .hamburger-bar {
     width: 100%;
-    height: 3px;
+    height: 2px;
     background-color: var(--clr-blue-primary);
     transition: all 0.3s ease;
 }
 
 /* ==========================================================================
-   FULL-SCREEN MOBILE NAVIGATION OVERLAY
+   FULL-SCREEN OVERLAY NAVIGATION (MOBILE-SPECIFIC VIEW)
    ========================================================================== */
 .mobile-nav-overlay {
     position: fixed;
@@ -216,18 +213,17 @@ a {
 }
 
 .mobile-link {
-    font-size: 1.4rem;
+    font-size: 14px;
     font-weight: 500;
     color: var(--clr-blue-primary);
 }
 
 .mobile-link.active {
     text-decoration: underline;
-    font-weight: 700;
 }
 
 /* ==========================================================================
-   HERO CANVAS (GUARANTEED IMAGE RENDERING)
+   HERO CANVAS COMPOSITION
    ========================================================================== */
 .hero-section {
     position: relative;
@@ -238,40 +234,32 @@ a {
     text-align: center;
     padding: 80px 24px;
     overflow: hidden;
-    background-color: #2b3956; /* Solid fallback color while loading */
 }
 
-/* DOM Image Wrapper ensures precise scaling and rendering */
-.hero-bg-wrapper {
+/* Hero Background Image Settings */
+.hero-bg-img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-}
-
-.hero-bg-image {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    object-position: center;
+    z-index: 0;
 }
 
-/* Overlay filter to recreate screenshot desaturation */
 .hero-bg-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(43, 61, 102, 0.55);
-    z-index: 2;
+    background-color: rgba(58, 77, 117, 0.45);
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 3;
+    z-index: 2;
     max-width: 900px;
     color: var(--clr-bg-white);
 }
@@ -282,7 +270,7 @@ a {
     font-weight: 700;
     line-height: 1.15;
     margin-bottom: 24px;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero-subtitle {
@@ -290,8 +278,8 @@ a {
     font-weight: 400;
     max-width: 780px;
     margin: 0 auto 40px auto;
-    line-height: 1.6;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    line-height: 1.5;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 .hero-action-buttons {
@@ -301,7 +289,7 @@ a {
     gap: 20px;
 }
 
-/* Button UI Architecture */
+/* Button UI Components */
 .btn {
     display: inline-block;
     padding: 14px 36px;
@@ -358,18 +346,12 @@ a {
     height: 240px;
     overflow: hidden;
     margin-bottom: 20px;
-    background-color: #ddd;
 }
 
 .pillar-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.pillar-card:hover .pillar-img {
-    transform: scale(1.03);
 }
 
 .pillar-card h3 {
@@ -383,11 +365,11 @@ a {
 .pillar-card p {
     color: var(--clr-text-muted);
     font-size: 0.98rem;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 /* ==========================================================================
-   CONTINUOUS RUNNING TEXT TICKER
+   CONTINUOUS MARQUEE RUNNING TEXT TICKER
    ========================================================================== */
 .running-text-ticker {
     background-color: var(--clr-orange-accent);
@@ -396,7 +378,7 @@ a {
     white-space: nowrap;
     display: flex;
     padding: 14px 0;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .ticker-track {
@@ -418,7 +400,7 @@ a {
 }
 
 /* ==========================================================================
-   FIELD UPDATES SECTION
+   FIELD UPDATES COMPONENT CONTAINER
    ========================================================================== */
 .updates-section {
     background-color: var(--clr-bg-cream);
@@ -437,20 +419,13 @@ a {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.update-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
 }
 
 .update-img-wrapper {
     width: 100%;
     height: 250px;
     overflow: hidden;
-    background-color: #ddd;
 }
 
 .update-img {
@@ -467,7 +442,7 @@ a {
 }
 
 .update-date {
-    color: #7b966c; /* Sage green matching design */
+    color: #8fa382;
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -507,7 +482,7 @@ a {
 }
 
 /* ==========================================================================
-   GLOBAL FOOTER AREA
+   GLOBAL FOOTER BLOCK STRUCTURE
    ========================================================================== */
 .site-footer {
     background-color: var(--clr-bg-white);
@@ -565,7 +540,7 @@ a {
     color: var(--clr-blue-primary);
 }
 
-/* Social Icons Grid & Custom Twitter/X Color Styling */
+/* Footers Social Media Icon Rings */
 .footer-social-wrapper {
     display: flex;
     justify-content: center;
@@ -583,7 +558,6 @@ a {
     justify-content: center;
     color: var(--clr-bg-white);
     font-size: 1.15rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .social-icon.facebook  { background-color: #0078ff; }
@@ -592,18 +566,13 @@ a {
 .social-icon.linkedin  { background-color: #0077b5; }
 .social-icon.tiktok    { background-color: #000000; }
 
-/* 
- * X Icon Styling: Uses a rich dark slate/charcoal (#1a1d20) instead of pure black, 
- * combined with a crisp white border and drop shadow so it stands out cleanly.
- */
 .social-icon.x-twitter { 
-    background-color: #1a1d20; 
-    border: 1.5px solid #d1d5db;
+    background-color: #111111; 
+    border: 1px solid rgba(255,255,255,0.2);
 }
-
 .social-icon:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .footer-copyright {
@@ -612,7 +581,7 @@ a {
     font-weight: 500;
 }
 
-/* Forest Green Accent Rule Line across bottom */
+/* Green highlight rule line across basement */
 .footer-accent-line {
     height: 4px;
     background-color: #4b8f24;
@@ -637,11 +606,11 @@ a {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     z-index: 99;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.2s ease, transform 0.2s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.2s ease;
 }
 
 .floating-top-btn.visible {
@@ -651,19 +620,23 @@ a {
 
 .floating-top-btn:hover {
     background-color: #cd672e;
-    transform: translateY(-3px);
 }
 
 /* ==========================================================================
-   MEDIA QUERY RESPONSIVENESS ADJUSTMENT ENGINE
+   MEDIA QUERY RESPONSIVENESS ADJUSTMENT ENGINES
    ========================================================================== */
 
-/* Tablet Displays (1024px and below) */
+/* Tablet & Smaller Screen Optimizations (Under 1024px) */
 @media (max-width: 1024px) {
+    .logo-text h1 {
+        font-size: 2.1rem;
+    }
+    .logo-text p {
+        font-size: 0.82rem;
+    }
     .hero-title {
         font-size: 3rem;
     }
-    
     .pillars-grid, 
     .updates-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -671,18 +644,30 @@ a {
     }
 }
 
-/* Mobile Screens (768px and below) */
+/* Smartphone Adjustments (Under 768px) */
 @media (max-width: 768px) {
     :root {
         --header-height: var(--header-mobile-height);
     }
 
     .desktop-nav {
-        display: none; /* Hide desktop menu on mobile */
+        display: none;
     }
 
     .menu-toggle {
-        display: flex; /* Enable hamburger icon trigger */
+        display: flex;
+    }
+
+    .header-logo-img {
+        height: 60px;
+    }
+
+    .logo-text h1 {
+        font-size: 1.9rem;
+    }
+
+    .logo-text p {
+        font-size: 0.73rem;
     }
 
     .hero-section {
@@ -718,7 +703,7 @@ a {
 
     .pillars-grid, 
     .updates-grid {
-        grid-template-columns: 1fr; /* Single column stack */
+        grid-template-columns: 1fr;
         gap: 30px;
     }
     
