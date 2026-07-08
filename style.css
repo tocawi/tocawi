@@ -1076,7 +1076,7 @@ a {
 
 /* --- Variables (Fallback & Scoped) --- */
 :root {
-    --prog-blue-brand: #3a5998;
+    --prog-blue-brand: #3A5CBF; /* Updated to correct brand blue */
     --prog-dark-blue: #1e3670;
     --prog-green-brand: #4a9029;
     --prog-orange-brand: #dc7a43;
@@ -1128,7 +1128,7 @@ a {
     line-height: 1.65;
 }
 
-/* Added Hero Image Styling */
+/* Hero Image Styling */
 .programs-hero-image {
     margin-top: 50px;
     width: 100%;
@@ -1145,7 +1145,7 @@ a {
     display: block;
 }
 
-/* --- Content Sections & Layout --- */
+/* --- Content Sections & Alternating Layout --- */
 .program-section {
     padding: 90px 0;
     background-color: #ffffff;
@@ -1161,6 +1161,7 @@ a {
     gap: 60px;
 }
 
+/* This creates the Desktop Zig-Zag Alternation */
 .prog-split-layout.reverse-layout {
     flex-direction: row-reverse;
 }
@@ -1375,6 +1376,7 @@ a {
         font-size: 1rem;
     }
 
+    /* Override both layouts to stack vertically on mobile (Image always on top) */
     .prog-split-layout, 
     .prog-split-layout.reverse-layout {
         flex-direction: column;
@@ -1387,7 +1389,7 @@ a {
     }
 
     .program-green-list li {
-        text-align: left; /* Keep bullets clean on mobile */
+        text-align: left; /* Keeps list bullets clean when center-aligned */
     }
 
     .work-pillars-grid {
