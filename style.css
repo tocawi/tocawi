@@ -24,7 +24,7 @@
     /* About Page Specific Variables */
     --about-blue-dark: #3a5998;
     --about-blue-light: #49639e;
-    --about-green-heading: #4a9029;
+    --about-green-heading: #4ca626;
     --about-orange-btn: #dc7a43;
     --about-orange-eyebrow: #d48a66;
     --about-bg-cream: #f4f3ed;
@@ -1078,7 +1078,7 @@ a {
 :root {
     --prog-blue-brand: #3A5CBF; /* Updated to correct brand blue */
     --prog-dark-blue: #1e3670;
-    --prog-green-brand: #4a9029;
+    --prog-green-brand: #4CA626;
     --prog-orange-brand: #dc7a43;
     --prog-bg-light: #f4f3ed;
     --prog-text-muted: #444444;
