@@ -1128,6 +1128,23 @@ a {
     line-height: 1.65;
 }
 
+/* Added Hero Image Styling */
+.programs-hero-image {
+    margin-top: 50px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero-display-img {
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    object-fit: cover;
+    display: block;
+}
+
 /* --- Content Sections & Layout --- */
 .program-section {
     padding: 90px 0;
@@ -1344,6 +1361,10 @@ a {
 @media (max-width: 768px) {
     .programs-hero {
         padding: 60px 16px;
+    }
+
+    .programs-hero-image {
+        margin-top: 30px;
     }
 
     .hero-content-wrapper h1 {
