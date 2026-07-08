@@ -10,6 +10,7 @@
 </head>
 <body class="get-involved-page-body">
 
+    <!-- Site Header -->
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo-area">
@@ -39,6 +40,7 @@
         </div>
     </header>
 
+    <!-- Mobile Navigation Overlay -->
     <div class="mobile-nav-overlay" id="mobileNav">
         <button class="close-menu" id="menuClose" aria-label="Close Navigation Menu">
             <i class="fa-solid xmark-icon fa-xmark"></i>
@@ -55,8 +57,10 @@
         </nav>
     </div>
 
+    <!-- Main Content Area -->
     <main class="get-involved-page-main">
         
+        <!-- Hero Section -->
         <section class="gi-hero-section">
             <div class="gi-container gi-hero-split">
                 <div class="gi-hero-text-col">
@@ -75,6 +79,7 @@
             </div>
         </section>
 
+        <!-- Vaccination Drives Feature Block -->
         <section class="gi-feature-section bg-gi-light">
             <div class="gi-container gi-split-layout">
                 <div class="gi-image-col">
@@ -94,6 +99,7 @@
             </div>
         </section>
 
+        <!-- School & Outreach Feature Block -->
         <section class="gi-feature-section bg-gi-light pt-0">
             <div class="gi-container gi-split-layout reverse-layout">
                 <div class="gi-image-col">
@@ -113,6 +119,7 @@
             </div>
         </section>
 
+        <!-- Your Voice Section with Running Text -->
         <section class="gi-voice-section">
             <div class="gi-container text-center">
                 <h2 class="gi-voice-title">Your Voice is the Cure</h2>
@@ -125,11 +132,13 @@
             </div>
         </section>
 
+        <!-- Partnership Opportunities Section -->
         <section class="gi-partnerships-section">
             <div class="gi-container">
                 <h2 class="gi-partnerships-title text-center">Partnership Opportunities</h2>
                 
                 <div class="gi-partners-grid">
+                    <!-- Card 1 -->
                     <div class="gi-partner-card">
                         <div class="gi-card-img-wrapper">
                             <img src="images/partnership-ngo.jpg" alt="Partners shaking hands">
@@ -144,6 +153,7 @@
                         </div>
                     </div>
 
+                    <!-- Card 2 -->
                     <div class="gi-partner-card">
                         <div class="gi-card-img-wrapper">
                             <img src="images/partnership-business.jpg" alt="Local marketplace entry">
@@ -158,6 +168,7 @@
                         </div>
                     </div>
 
+                    <!-- Card 3 -->
                     <div class="gi-partner-card">
                         <div class="gi-card-img-wrapper">
                             <img src="images/partnership-government.jpg" alt="Modern strategic institutional building">
@@ -177,6 +188,7 @@
 
     </main>
 
+    <!-- Site Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-branding">
@@ -208,10 +220,12 @@
         <div class="footer-accent-line"></div>
     </footer>
 
+    <!-- Back to Top Button -->
     <button id="floatingBackToTop" class="floating-top-btn" aria-label="Scroll Back To Top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menuToggle');
@@ -219,19 +233,16 @@
             const menuClose = document.getElementById('menuClose');
             const scrollTopBtn = document.getElementById('floatingBackToTop');
 
-            // Opens mobile navigation overlay view
             menuToggle.addEventListener('click', function() {
                 mobileNav.classList.add('is-active');
                 document.body.style.overflow = 'hidden';
             });
 
-            // Closes mobile navigation overlay view
             menuClose.addEventListener('click', function() {
                 mobileNav.classList.remove('is-active');
                 document.body.style.overflow = '';
             });
 
-            // Handle scroll triggers for Back-to-Top Button Visibility
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 400) {
                     scrollTopBtn.classList.add('visible');
@@ -240,7 +251,6 @@
                 }
             });
 
-            // Smooth scroll action back up to page ceiling
             scrollTopBtn.addEventListener('click', function() {
                 window.scrollTo({
                     top: 0,
