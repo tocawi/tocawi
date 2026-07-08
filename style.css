@@ -3,8 +3,8 @@
    ========================================================================== */
 :root {
     /* Color Palette */
-    --clr-blue-primary: #25448c;
-    --clr-blue-deep: #1e3670;
+    --clr-blue-primary: #3A5CBF;
+    --clr-blue-deep: #3A5CBF;
     --clr-orange-accent: #e07a41;
     --clr-bg-cream: #f6f5f0;
     --clr-bg-white: #ffffff;
@@ -22,8 +22,8 @@
     --header-mobile-height: 95px;
 
     /* About Page Specific Variables */
-    --about-blue-dark: #3a5998;
-    --about-blue-light: #49639e;
+    --about-blue-dark: #3A5CBF;
+    --about-blue-light: #3A5CBF;
     --about-green-heading: #4ca626;
     --about-orange-btn: #dc7a43;
     --about-orange-eyebrow: #d48a66;
@@ -1077,7 +1077,7 @@ a {
 /* --- Variables (Fallback & Scoped) --- */
 :root {
     --prog-blue-brand: #3A5CBF; /* Updated to correct brand blue */
-    --prog-dark-blue: #1e3670;
+    --prog-dark-blue: #3A5CBF;
     --prog-green-brand: #4CA626;
     --prog-orange-brand: #dc7a43;
     --prog-bg-light: #f4f3ed;
