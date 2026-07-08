@@ -1435,6 +1435,16 @@ a {
     padding-top: 0 !important;
 }
 
+/* Serif Font Overrides (Georgia, Times New Roman) */
+.get-involved-page-main h1,
+.gi-feature-title,
+.gi-voice-title,
+.gi-marquee-text,
+.gi-partnerships-title,
+.gi-partner-card h3 {
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+}
+
 /* 1. Hero Section */
 .gi-hero-section {
     padding: 80px 0;
@@ -1449,7 +1459,6 @@ a {
 }
 
 .gi-hero-text-col h1 {
-    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 3.5rem;
     color: #3A5CBF; /* Brand Blue */
@@ -1464,7 +1473,7 @@ a {
     margin-bottom: 35px;
 }
 
-/* Linkable Words with Green Dots */
+/* Linkable Navigation Words with Green Dots */
 .gi-hero-anchors {
     display: flex;
     flex-wrap: wrap;
@@ -1519,7 +1528,7 @@ a {
 
 .gi-split-layout.reverse-layout .gi-card-col,
 .gi-split-layout.reverse-layout .gi-image-col {
-    direction: ltr; /* Restores text direction inside content panels */
+    direction: ltr;
 }
 
 .gi-image-col {
@@ -1533,7 +1542,7 @@ a {
     display: block;
 }
 
-/* Rounded Card Components */
+/* Rounded Inner Components */
 .gi-rounded-card {
     background-color: #ffffff;
     border-radius: 40px;
@@ -1542,7 +1551,6 @@ a {
 }
 
 .gi-feature-title {
-    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 2.2rem;
     color: #3A5CBF; /* Brand Blue */
@@ -1586,7 +1594,6 @@ a {
 }
 
 .gi-voice-title {
-    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
     color: #3A5CBF;
@@ -1614,7 +1621,6 @@ a {
 
 .gi-marquee-text {
     display: inline-block;
-    font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-size: 2.2rem;
     color: #dc7a43; /* Terracotta Orange */
@@ -1629,7 +1635,7 @@ a {
     100% { transform: translate3d(-100%, 0, 0); }
 }
 
-/* 4. Partnership Opportunities (Dark Blue Grid Section) */
+/* 4. Partnership Opportunities (3-Column Horizontal Grid System) */
 .gi-partnerships-section {
     background-color: #3A5CBF; /* Brand Blue Background */
     padding: 80px 0;
@@ -1637,26 +1643,25 @@ a {
 }
 
 .gi-partnerships-title {
-    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 2.8rem;
     color: #ffffff;
     margin-bottom: 50px;
 }
 
-.gi-partners_grid {
+.gi-partners-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 Cards lined up horizontally on desktop */
     gap: 30px;
 }
 
-/* Card Individual Style */
+/* Individual Vertical Card Structure arranged across the grid row */
 .gi-partner-card {
     background-color: #ffffff;
     border-radius: 16px;
     overflow: hidden;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Image explicitly stacked on top of card content */
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
@@ -1681,18 +1686,17 @@ a {
 
 .gi-card-tag {
     font-size: 0.85rem;
-    font-weight: 600;
-    color: #5d78ff;
+    font-weight: 700;
+    color: #3A5CBF; /* Brand Blue tag */
     letter-spacing: 1px;
     margin-bottom: 12px;
     display: block;
 }
 
 .gi-card-content h3 {
-    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
-    color: #3A5CBF;
+    color: #111111;
     margin-bottom: 15px;
     line-height: 1.3;
 }
@@ -1702,7 +1706,7 @@ a {
     line-height: 1.5;
     color: #555555;
     margin-bottom: 30px;
-    flex-grow: 1;
+    flex-grow: 1; /* Ensures uniform spacing for all buttons on uneven rows */
 }
 
 .gi-card-action {
@@ -1713,14 +1717,15 @@ a {
 .gi-btn-outline {
     display: inline-block;
     padding: 12px 28px;
-    border: 1px solid #dc7a43; /* Orange Border Accent */
+    border: 2px solid #dc7a43; /* Orange Accent Border */
     color: #dc7a43;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.95rem;
     border-radius: 30px;
     transition: all 0.25s ease;
     text-align: center;
+    width: 100%;
 }
 
 .gi-btn-outline:hover {
@@ -1743,7 +1748,7 @@ a {
     }
     
     .gi-partners-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Scales down smoothly to 2 columns on tablets */
     }
     
     .gi-hero-text-col h1 {
@@ -1757,7 +1762,7 @@ a {
 
 @media (max-width: 768px) {
     .gi-partners-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Clean single column presentation on small mobile viewports */
     }
     
     .gi-hero-text-col h1 {
@@ -1770,5 +1775,9 @@ a {
     
     .gi-marquee-text {
         font-size: 1.7rem;
+    }
+    
+    .gi-card-content {
+        padding: 25px;
     }
 }
