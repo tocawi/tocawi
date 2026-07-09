@@ -2074,136 +2074,176 @@ a {
     }
 }
 /* ==========================================================================
-   BLOG SINGLE PAGE SYSTEM RULES
+   ISOLATED BLOG POST PRESENTATION LAYER SYSTEM
    ========================================================================== */
 
 .blog-post-page-body {
-    background-color: #f7f9fc;
-    color: #333333;
+    background-color: #fcfdfe;
+    color: #111111;
     font-family: 'Inter', sans-serif;
-    line-height: 1.7;
+    line-height: 1.65;
+    margin: 0;
+    padding: 0;
 }
 
 .blog-single-main-layout {
-    padding: 40px 20px;
-    min-height: 80rem;
+    padding: 60px 20px;
+    background-color: #fcfdfe;
 }
 
 .blog-content-wrapper {
-    max-width: 850px;
+    max-width: 940px;
     margin: 0 auto;
 }
 
-/* Top-most Left Aligned Anchor Styling */
+/* Breadcrumb Navigation Layout */
 .blog-nav-breadcrumb {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     text-align: left;
 }
 
 .all-posts-anchor {
     font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #3a5cbf;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #3a5cbf; /* Title/Subtitle standard configuration color theme */
     text-decoration: none;
-    transition: color 0.2s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    transition: opacity 0.2s ease;
 }
 
 .all-posts-anchor:hover {
-    color: #243e8c;
-    text-decoration: underline;
+    opacity: 0.8;
 }
 
-/* Document White Base Display Framework */
+/* Base Clean Display Container Document Box */
 .blog-article-card {
     background: #ffffff;
-    border-radius: 12px;
-    padding: 50px 60px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f0f4f8;
+    border-radius: 6px;
+    padding: 60px 70px;
 }
 
-/* Meta Data Line Formatting Elements */
+/* Minimal Strip Header Info Element Positioning */
 .blog-author-meta-strip {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eef2f6;
+    justify-content: flex-start;
+    gap: 14px;
+    margin-bottom: 25px;
+    position: relative;
 }
 
 .author-avatar-badge {
-    width: 46px;
-    height: 46px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    background-color: #3a5cbf;
+    background-color: #0099a8;
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
 }
 
 .author-info-block {
     display: flex;
-    flex-direction: column;
-}
-
-.author-byline {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.author-highlight {
-    color: #333;
+    align-items: center;
 }
 
 .publishing-sub-meta {
-    font-size: 0.85rem;
-    color: #888888;
+    font-size: 0.95rem;
+    color: #556575;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.meta-divider {
-    color: #cccccc;
+.meta-item-username {
+    color: #3a5cbf;
 }
 
-/* Main Post Title Rule Updates */
+.meta-divider {
+    color: #a0aec0;
+}
+
+.blog-meta-actions {
+    margin-left: auto;
+}
+
+.blog-dots-btn {
+    background: transparent;
+    border: none;
+    color: #3a5cbf;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px;
+    transition: opacity 0.2s ease;
+}
+
+.blog-dots-btn:hover {
+    opacity: 0.7;
+}
+
+/* Heading Configurations Elements Mapping */
 .blog-title-heading {
     font-family: 'Inter', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3.1rem;
     font-weight: 700;
-    line-height: 1.3;
-    color: #3a5cbf; /* Title Color Regulation Explicit Enforcement */
-    margin-bottom: 10px;
+    line-height: 1.25;
+    color: #3a5cbf; /* Enforced blue tint variant mapping layouts */
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
 .blog-update-stamp {
-    font-size: 0.9rem;
-    color: #888888;
-    margin-bottom: 40px;
-    font-style: italic;
+    font-size: 0.95rem;
+    color: #3a5cbf;
+    margin-bottom: 35px;
 }
 
-/* Graphical Asset Modular Frameworks */
+/* Rich Prose Text Alignment Handling Blocks */
+.blog-article-body-context p {
+    font-size: 1.15rem;
+    color: #0f1419;
+    margin-bottom: 28px;
+    font-weight: 400;
+}
+
+/* Secondary Typography Structure Element Updates */
+.blog-article-body-context h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #3a5cbf; /* Subheadings assignment standard specification color rules */
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.blog-article-body-context h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #3a5cbf; /* Subheadings assignment standard specification color rules */
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+/* Embedded Media Asset Presentation Alignment Container Frame */
 .blog-inlined-media-container {
-    margin: 40px 0;
+    margin: 45px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .image-inner-wrapper {
+    position: relative;
     width: 100%;
-    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 }
 
 .blog-body-img {
@@ -2213,75 +2253,70 @@ a {
     object-fit: cover;
 }
 
-/* Image Sub-Description Specific Regulation Rule */
+/* Top Right Relative Circle Scale Action Expand Trigger Button Component */
+.image-expand-overlay-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.image-expand-overlay-btn:hover {
+    transform: scale(1.05);
+    background-color: #ffffff;
+}
+
+/* Target Specific Blue Dynamic Label Box */
 .blog-image-description {
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
-    font-weight: 500;
-    color: #3a5cbf; /* Explicit requirement mapping decoration rules */
-    margin-top: 12px;
+    font-weight: 400;
+    color: #3a5cbf; /* Explicitly required below-image description color placement */
+    margin-top: 16px;
     text-align: center;
-    padding: 0 15px;
+    width: 100%;
 }
 
-/* Markdown Semantic Content Rules Handling */
-.blog-article-body-context p {
-    font-size: 1.1rem;
-    color: #444444;
-    margin-bottom: 24px;
-    letter-spacing: -0.1px;
-}
-
-/* Sub-Heading Typography Rule Implementations */
-.blog-article-body-context h2 {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #3a5cbf; /* Header Color Regulation */
-    margin-top: 45px;
-    margin-bottom: 20px;
-    letter-spacing: -0.3px;
-}
-
-.blog-article-body-context h3 {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: #3a5cbf; /* Subtitle Color Regulation */
-    margin-top: 35px;
-    margin-bottom: 12px;
-    letter-spacing: -0.2px;
-}
-
-/* Lists and Functional Formatting Wrappers */
+/* Custom Ordered lists styles matching documentation styling guidelines */
 .blog-bulleted-list {
-    margin-bottom: 30px;
-    padding-left: 20px;
+    margin-bottom: 35px;
+    padding-left: 25px;
 }
 
 .blog-bulleted-list li {
-    font-size: 1.05rem;
-    color: #444444;
-    margin-bottom: 12px;
-    position: relative;
-    list-style-type: square;
+    font-size: 1.15rem;
+    color: #0f1419;
+    margin-bottom: 14px;
+    list-style-type: disc;
 }
 
-/* Responsive Adaptive Adjustments across displays */
+/* Responsive Adaptive Sizing Implementations across devices layout points */
 @media (max-width: 768px) {
     .blog-article-card {
-        padding: 30px 25px;
+        padding: 35px 25px;
     }
     
     .blog-title-heading {
-        font-size: 1.9rem;
+        font-size: 2.1rem;
     }
     
     .blog-article-body-context h2 {
-        font-size: 1.5rem;
+        font-size: 1.65rem;
     }
 
     .blog-article-body-context h3 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 }
