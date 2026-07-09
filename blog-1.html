@@ -10,6 +10,7 @@
 </head>
 <body class="blog-post-page-body">
 
+    <!-- Site Header -->
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo-area">
@@ -39,6 +40,7 @@
         </div>
     </header>
 
+    <!-- Mobile Navigation Overlay -->
     <div class="mobile-nav-overlay" id="mobileNav">
         <button class="close-menu" id="menuClose" aria-label="Close Navigation Menu">
             <i class="fa-solid xmark-icon fa-xmark"></i>
@@ -55,41 +57,55 @@
         </nav>
     </div>
 
+    <!-- Main Content Area -->
     <main class="blog-single-main-layout">
         <div class="blog-content-wrapper">
             
+            <!-- Top-most left-aligned Link Wrapper -->
             <div class="blog-nav-breadcrumb">
-                <a href="blog.html" class="all-posts-anchor">All Posts</a>
+                <a href="#" class="all-posts-anchor">All Posts</a>
             </div>
 
+            <!-- Single Card Container Frame View -->
             <article class="blog-article-card">
                 
+                <!-- Author Strip Info Header Meta -->
                 <div class="blog-author-meta-strip">
                     <div class="author-avatar-badge">T</div>
                     <div class="author-info-block">
-                        <span class="author-byline">Writer: <strong class="author-highlight">thetailsofcare</strong></span>
                         <div class="publishing-sub-meta">
-                            <span class="meta-item">thetailsofcare</span>
+                            <span class="meta-item-username">thetailsofcare</span>
                             <span class="meta-divider">•</span>
                             <span class="meta-item">Mar 20</span>
                             <span class="meta-divider">•</span>
                             <span class="meta-item">4 min read</span>
                         </div>
                     </div>
+                    <div class="blog-meta-actions">
+                        <button class="blog-dots-btn" aria-label="More Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                    </div>
                 </div>
 
+                <!-- Main Section Heading Title Styles -->
                 <h1 class="blog-title-heading">Combatting Rabies: Join Tails of Care Initiatives</h1>
                 <p class="blog-update-stamp">Updated: Apr 1</p>
 
+                <!-- Core Dynamic Article Paragraph Layout -->
                 <div class="blog-article-body-context">
                     
                     <p>Rabies is a deadly viral disease that affects mammals, including humans. Each year, tens of thousands of people die from rabies, primarily in developing countries where access to vaccines and medical care is limited. The World Health Organization (WHO) estimates that rabies causes approximately 59,000 deaths annually, with the majority of cases occurring in Africa and Asia. This alarming statistic highlights the urgent need for awareness and action to combat this preventable disease.</p>
 
                     <p>In this blog post, we will explore the Tails of Care initiatives aimed at combatting rabies, the importance of vaccination, and how you can get involved in making a difference.</p>
 
+                    <!-- Embedded Graphical Media Block View Layout -->
                     <div class="blog-inlined-media-container">
                         <div class="image-inner-wrapper">
                             <img src="images/blog-1.png" alt="Eye-level view of a veterinarian administering a rabies vaccine to a dog" class="blog-body-img">
+                            <button class="image-expand-overlay-btn" aria-label="Expand image view">
+                                <i class="fa-solid fa-expand"></i>
+                            </button>
                         </div>
                         <p class="blog-image-description">A veterinarian giving a rabies vaccine to a dog during a vaccination drive.</p>
                     </div>
@@ -173,6 +189,7 @@
         </div>
     </main>
 
+    <!-- Site Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-branding">
@@ -201,6 +218,7 @@
         <div class="footer-accent-line"></div>
     </footer>
 
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menuToggle');
