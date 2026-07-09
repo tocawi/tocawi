@@ -73,9 +73,8 @@
                 <div class="blog-author-meta-strip">
                     <div class="author-avatar-badge">T</div>
                     <div class="author-info-block">
+                        <span class="meta-item-username">thetailsofcare</span>
                         <div class="publishing-sub-meta">
-                            <span class="meta-item-username">thetailsofcare</span>
-                            <span class="meta-divider">•</span>
                             <span class="meta-item">Mar 20</span>
                             <span class="meta-divider">•</span>
                             <span class="meta-item">4 min read</span>
@@ -215,13 +214,20 @@
         <div class="footer-accent-line"></div>
     </footer>
 
+    <!-- Fixed Presentation Button Framework Placement Element -->
+    <button id="floatingBackToTop" class="floating-top-btn" aria-label="Scroll Back To Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
     <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menuToggle');
             const mobileNav = document.getElementById('mobileNav');
             const menuClose = document.getElementById('menuClose');
+            const scrollTopBtn = document.getElementById('floatingBackToTop');
 
+            // Responsive navigation actions handling logic
             menuToggle.addEventListener('click', function() {
                 mobileNav.classList.add('is-active');
                 document.body.style.overflow = 'hidden';
@@ -230,6 +236,23 @@
             menuClose.addEventListener('click', function() {
                 mobileNav.classList.remove('is-active');
                 document.body.style.overflow = '';
+            });
+
+            // Handle scroll positioning triggers for Back-to-Top Button Visibility
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 400) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+
+            // Smooth scroll action back up to page ceiling
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
         });
     </script>
