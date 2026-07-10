@@ -2353,3 +2353,245 @@ a {
         height: 45px;
     }
 }
+/* ==========================================================================
+   Contact Us Page Template Stylesheet
+   ========================================================================== */
+
+/* Layout Canvas Definitions */
+.contact-page-body {
+    background-color: #f6f4ee; /* Warm Off-white Canvas background */
+    color: #4a4a4a;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Section 1: Get in Touch Layout Block (image_274662.png) */
+.get-in-touch-section {
+    padding: 60px 0 40px 0;
+}
+
+.contact-split-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-main-title {
+    font-family: Georgia, serif; /* Styled exactly to Georgia */
+    font-weight: 700;
+    font-size: 3.8rem;
+    color: #3b60c0; /* Signature Royal Blue */
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+/* Giant Colorful Flat Circle Profiles (image_274662.png) */
+.large-social-circles-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.circle-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.circle-icon:hover {
+    transform: scale(1.05);
+    filter: brightness(0.95);
+}
+
+/* Brand Exact Color Mapping */
+.fb-color { background-color: #1877f2; }
+.ig-color { background-color: #ec0075; }
+.yt-color { background-color: #ff0000; }
+.x-color  { background-color: #000000; }
+.ln-color { background-color: #0077b5; }
+.tk-color { background-color: #000000; }
+
+/* Contact Content Elements */
+.contact-info-block {
+    max-width: 760px;
+}
+
+.contact-intro-text {
+    font-size: 1.2rem;
+    line-height: 1.65;
+    color: #555555;
+    margin-bottom: 40px;
+}
+
+.contact-subtitle {
+    font-family: Georgia, serif; /* Styled exactly to Georgia */
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #3b60c0;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.contact-detail-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 25px;
+}
+
+.contact-detail-text .text-link {
+    color: #555555;
+    text-decoration: underline;
+}
+
+/* Section 2: Headquarters Profile layout block (image_2749e8.png) */
+.hq-banner-section {
+    background-color: #fcfbfa; /* Distinct clean secondary section tone background */
+    border-top: 1px solid #edebe4;
+    padding: 60px 0 80px 0;
+    text-align: center;
+}
+
+.hq-card-header {
+    max-width: 800px;
+    margin: 0 auto 45px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hq-map-pin-badge {
+    width: 44px;
+    height: 44px;
+    background-color: #72a276; /* Muted Green Badge color scheme frame layout */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.hq-orange-title {
+    font-family: Georgia, serif; /* Styled exactly to Georgia */
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #e07a44; /* Terracotta / Amber uppercase label subtitle accent text */
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.hq-main-location {
+    font-family: Georgia, serif; /* Styled exactly to Georgia */
+    font-weight: 700;
+    font-size: 4rem;
+    color: #3b60c0;
+    margin: 0 0 20px 0;
+    letter-spacing: -1px;
+}
+
+.hq-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666666;
+    max-width: 700px;
+    margin: 0;
+}
+
+/* Channel Split Column Framework (image_2749e8.png) */
+.hq-channels-grid {
+    display: flex;
+    justify-content: center;
+    gap: 160px; /* Generous spacing setting alignment */
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.channel-column h3 {
+    font-family: Georgia, serif; /* Styled exactly to Georgia */
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #3b60c0;
+    margin-bottom: 15px;
+}
+
+.channel-link {
+    font-size: 1.15rem;
+    color: #e07a44; /* Amber colored highlight link standard context configuration */
+    text-decoration: underline;
+}
+
+.channel-text {
+    font-size: 1.15rem;
+    color: #555555;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Responsive Adaptations Media Queries
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .contact-split-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+    .contact-main-title {
+        font-size: 3rem;
+    }
+    .hq-main-location {
+        font-size: 3rem;
+    }
+    .hq-channels-grid {
+        gap: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .large-social-circles-row {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .circle-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1.6rem;
+    }
+    .hq-channels-grid {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-main-title {
+        font-size: 2.5rem;
+    }
+    .hq-main-location {
+        font-size: 2.3rem;
+    }
+    .hq-orange-title {
+        font-size: 1.1rem;
+    }
+}
