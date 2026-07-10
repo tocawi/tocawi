@@ -21,7 +21,7 @@
 .emergency-hero-panel {
     background-color: #3b60c0; /* Signature Royal Blue solid canvas */
     color: #ffffff;
-    padding: 60px 0 0 0; /* Extends right-aligned media down exactly to edge limits */
+    padding: 60px 0; /* Balanced padding to prevent edge clipping */
     overflow: hidden;
 }
 
@@ -149,14 +149,14 @@
 .hero-right-media-frame {
     width: 440px;
     display: flex;
-    align-items: flex-end;
+    align-items: center; /* Centers the image card vertically within the blue space */
 }
 
 .asymmetrical-image-wrapper {
     width: 100%;
-    height: calc(100% - 60px);
+    height: 100%;
     background-color: #ffffff;
-    border-top-left-radius: 32px; /* Smooth rounded interface edge as visible in photo frame layout */
+    border-radius: 32px; /* Fully rounded card profile configuration */
     overflow: hidden;
 }
 
