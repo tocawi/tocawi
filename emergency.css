@@ -1,0 +1,366 @@
+/* ==========================================================================
+   Emergency Info Page Custom Template Stylesheet
+   ========================================================================== */
+
+/* Page Base Structural Declarations */
+.emergency-page-body {
+    background-color: #ffffff;
+    color: #4a4a4a;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.emergency-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Section 1: Deep Royal Blue Hero Frame Area (image_3500a1.png & image_35525e.png) */
+.emergency-hero-panel {
+    background-color: #3b60c0; /* Signature Royal Blue solid canvas */
+    color: #ffffff;
+    padding: 60px 0 0 0; /* Extends right-aligned media down exactly to edge limits */
+    overflow: hidden;
+}
+
+.hero-split-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 40px;
+}
+
+.hero-left-documentation {
+    flex: 1;
+    padding-bottom: 60px;
+}
+
+.hero-tagline-label {
+    color: #70c447; /* Vibrant action green uppercase text trace */
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.emergency-hero-title {
+    font-family: Georgia, serif; /* Styled directly to Georgia */
+    font-weight: 700;
+    font-size: 4.2rem;
+    color: #e07a44; /* Vivid Terracotta Orange header color shift */
+    margin: 0 0 24px 0;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+}
+
+.hero-intro-paragraph {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 35px;
+    max-width: 720px;
+}
+
+/* Green Highlight Alert Contact Display Block (image_3500a1.png) */
+.tocawi-contacts-card {
+    background-color: #3da62b; /* Pure action solid green background canvas */
+    border-radius: 32px; /* Deep rounded profile frame contours */
+    padding: 30px 40px;
+    max-width: 580px;
+    margin-bottom: 45px;
+}
+
+.tocawi-contacts-card h2 {
+    font-family: Georgia, serif; /* Styled directly to Georgia */
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #e07a44; /* Terracotta orange header configuration alignment */
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.tocawi-contacts-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tocawi-contacts-card ul li {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.tocawi-contacts-card ul li:last-child {
+    margin-bottom: 0;
+}
+
+.tocawi-contacts-card ul li strong {
+    font-weight: 600;
+}
+
+/* Inner Sequential Lists Grid Configuration (image_35525e.png) */
+.hero-guidance-subgrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 800px;
+}
+
+.inner-orange-heading {
+    font-family: Georgia, serif; /* Styled directly to Georgia */
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #e07a44; /* Terracotta Orange Subtitle Style Context */
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.inner-numeric-list {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.inner-numeric-list li {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    color: #ffffff;
+}
+
+.inner-bulleted-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.inner-bulleted-list li {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    color: #ffffff;
+}
+
+/* Asymmetric Hero Photo Container Element */
+.hero-right-media-frame {
+    width: 440px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.asymmetrical-image-wrapper {
+    width: 100%;
+    height: calc(100% - 60px);
+    background-color: #ffffff;
+    border-top-left-radius: 32px; /* Smooth rounded interface edge as visible in photo frame layout */
+    overflow: hidden;
+}
+
+.medical-facility-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Section 2: Four-Column Clean Matrix Layout Area (image_3552c0.png) */
+.bitten-matrix-section {
+    background-color: #ffffff; /* Contrast blank isolated container base */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.matrix-main-section-title {
+    font-family: Georgia, serif; /* Styled directly to Georgia */
+    font-weight: 700;
+    font-size: 4rem;
+    color: #3b60c0; /* Deep contrasting blue head text */
+    margin-top: 0;
+    margin-bottom: 60px;
+    letter-spacing: -1px;
+}
+
+.matrix-four-columns-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: left;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.matrix-item-node .matrix-node-subtitle {
+    font-family: Georgia, serif; /* Styled directly to Georgia */
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #3b60c0;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.matrix-item-node .matrix-node-desc {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #555555;
+    margin: 0;
+}
+
+/* Section 3: Asymmetric Off-White Symptom Row (image_35531e.png) */
+.spotting-signs-section {
+    background-color: #f6f4ee; /* Warm Ivory canvas background profile layout */
+    padding: 80px 0;
+}
+
+.asymmetric-signs-split {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.signs-left-node {
+    flex: 1;
+}
+
+.signs-section-main-title {
+    font-family: Georgia, serif; /* Styled directly to Georgia */
+    font-weight: 700;
+    font-size: 4.2rem;
+    color: #3b60c0;
+    margin-top: 0;
+    margin-bottom: 25px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.signs-intro-context {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 40px;
+    max-width: 540px;
+}
+
+.savanna-dog-media-container {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.savanna-dog-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Isolated White Card Element (image_35531e.png) */
+.signs-right-node {
+    width: 580px;
+    margin-top: 50px; /* Aligns visually down under the primary head break */
+}
+
+.white-symptoms-isolated-card {
+    background-color: #ffffff;
+    border-radius: 40px; /* Extruded deep micro rounded box corners */
+    padding: 50px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.015);
+}
+
+.card-blue-subtitle {
+    font-family: Georgia, serif; /* Styled directly to Georgia */
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #3b60c0;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.card-styled-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-styled-list li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 18px;
+    position: relative;
+    padding-left: 24px;
+}
+
+.card-styled-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* Bullet decoration implementation matching layout standard details */
+.card-styled-list li::before {
+    content: "•";
+    color: #8fa0cc; /* Muted corporate tone secondary listing dot profile icon text pointer */
+    font-size: 1.4rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* ==========================================================================
+   Responsive Adaptive Viewports Configuration Overrides
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+    .hero-split-flex {
+        flex-direction: column;
+    }
+    .hero-right-media-frame {
+        width: 100%;
+        height: 350px;
+        align-items: stretch;
+    }
+    .asymmetrical-image-wrapper {
+        border-radius: 32px;
+        height: 100%;
+    }
+    .asymmetric-signs-split {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .signs-right-node {
+        width: 100%;
+        margin-top: 0;
+    }
+    .matrix-four-columns-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .emergency-hero-title, .matrix-main-section-title, .signs-section-main-title {
+        font-size: 3rem;
+    }
+    .hero-guidance-subgrid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .white-symptoms-isolated-card {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .emergency-hero-title, .matrix-main-section-title, .signs-section-main-title {
+        font-size: 2.3rem;
+    }
+    .matrix-four-columns-grid {
+        grid-template-columns: 1fr;
+    }
+    .tocawi-contacts-card {
+        padding: 24px;
+    }
+}
