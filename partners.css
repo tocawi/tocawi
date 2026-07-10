@@ -24,8 +24,8 @@
 }
 
 .partners-main-title {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
+    font-family: Georgia, serif; /* Updated to Georgia */
+    font-weight: 700;
     font-size: 3rem;
     color: #3b60c0; /* Signature Royal Blue Header Accent */
     margin-bottom: 20px;
@@ -82,7 +82,7 @@
 }
 
 .partner-type-card h3 {
-    font-family: 'Inter', sans-serif;
+    font-family: Georgia, serif; /* Updated to Georgia */
     font-weight: 700;
     font-size: 1.6rem;
     color: #3b60c0;
@@ -103,8 +103,8 @@
 }
 
 .team-section-title {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
+    font-family: Georgia, serif; /* Updated to Georgia */
+    font-weight: 700;
     font-size: 3rem;
     color: #3b60c0;
     margin-bottom: 20px;
@@ -133,7 +133,7 @@
 }
 
 .member-role-badge {
-    font-family: 'Inter', sans-serif;
+    font-family: Georgia, serif; /* Updated to Georgia */
     font-weight: 700;
     font-size: 1.15rem;
     color: #d8763d; /* Terracotta Orange Subtitle Style Context */
@@ -160,7 +160,7 @@
 }
 
 .member-name {
-    font-family: 'Inter', sans-serif;
+    font-family: Georgia, serif; /* Updated to Georgia */
     font-weight: 700;
     font-size: 1.5rem;
     color: #3b60c0;
@@ -204,8 +204,8 @@
 }
 
 .cta-heading {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
+    font-family: Georgia, serif; /* Updated to Georgia */
+    font-weight: 700;
     font-size: 3.2rem;
     color: #3b60c0; /* Deep contrasting blue head text */
     margin-top: 0;
