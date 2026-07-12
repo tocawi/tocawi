@@ -78,7 +78,7 @@
 }
 
 /* ==========================================================================
-   SECTION 1: Reporting Guidelines (Image 1)
+   SECTION 1: Reporting Guidelines 
    ========================================================================== */
 .guidelines-grid {
     display: grid;
@@ -122,7 +122,7 @@
 }
 
 /* ==========================================================================
-   SECTION 2: Call to Action (Image 2)
+   SECTION 2: Call to Action 
    ========================================================================== */
 .cta-section {
     padding: 100px 0;
@@ -151,7 +151,7 @@
 }
 
 /* ==========================================================================
-   SECTION 3: What Happens Next (Image 3)
+   SECTION 3: What Happens Next 
    ========================================================================== */
 .process-section {
     padding: 100px 0;
@@ -181,7 +181,7 @@
 }
 
 /* ==========================================================================
-   SECTION 4: FAQ (Image 4 & 5)
+   SECTION 4: FAQ 
    ========================================================================== */
 .faq-section {
     padding: 90px 0 120px 0;
@@ -241,16 +241,17 @@
 @media (max-width: 768px) {
     .guidelines-grid {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .guidelines-text-area {
         padding-right: 0;
-        order: 2; /* Put image above text on mobile */
+        order: 1; /* Keep text on top */
     }
 
     .guidelines-image-area {
-        order: 1;
-        margin-bottom: 20px;
+        order: 2; /* Push image to bottom */
+        margin-bottom: 0;
     }
 
     .huge-title {
