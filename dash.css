@@ -1,0 +1,323 @@
+/* ==========================================================================
+   ToCAWI Live Impact Dashboard Component-Specific Stylesheet
+   ========================================================================== */
+
+/* Layout Foundations */
+.dash-page-body {
+    background-color: #ffffff;
+    color: #4a4a4a;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.dash-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.standard-reading-left {
+    max-width: 650px;
+    margin-left: 0;
+}
+
+.max-width-center {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Color Configurations */
+.text-blue { color: #3b5cbd; }
+.text-green { color: #5da447; }
+.text-orange { color: #dd7945; }
+.text-dark { color: #4e4e4e; }
+
+/* Structural Background Section Blocks */
+.dash-section-white {
+    background-color: #ffffff;
+    padding: 90px 0;
+}
+
+.dash-section-beige {
+    background-color: #f6f4f0;
+    padding: 95px 0;
+}
+
+/* Typography Core Rules */
+.georgia-title {
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    margin: 0;
+}
+
+.huge-dash-title {
+    font-size: 5rem;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 30px;
+}
+
+.large-dash-title {
+    font-size: 4rem;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+}
+
+.body-text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 2: Asymmetric Metrics Board Layout
+   ========================================================================== */
+.metrics-asymmetric-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.metric-block-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.metric-block-card.large-card {
+    padding: 85px 50px;
+}
+
+.metrics-side-stack {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+}
+
+.metric-block-card.stacked-card {
+    padding: 40px 45px;
+}
+
+.metric-counter {
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    font-size: 5.2rem;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.metric-label {
+    font-size: 1.8rem;
+    letter-spacing: -0.3px;
+}
+
+/* Goal block handling text alignment precisely */
+.label-only-card {
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.compact-goal {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   SECTION 3: Case Monitoring Board Layout
+   ========================================================================== */
+.case-monitoring-section {
+    padding: 110px 0;
+}
+
+.case-monitoring-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.monitoring-intro-column .large-dash-title {
+    margin-bottom: 25px;
+    font-size: 4.2rem;
+    line-height: 1.05;
+}
+
+.inner-beige-display-card {
+    background-color: #f6f4f0;
+    border-radius: 16px;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.monitoring-card-title {
+    font-size: 2.6rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.monitoring-giant-number {
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    font-size: 5.5rem;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.monitoring-rate-text {
+    font-size: 1.35rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   SECTION 4: Education Outreach Centered Cards Setup
+   ========================================================================== */
+.outreach-main-heading {
+    margin-bottom: 25px;
+}
+
+.outreach-header-block {
+    margin-bottom: 60px;
+}
+
+.outreach-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.outreach-metric-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.outreach-number {
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    font-size: 3.8rem;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.outreach-label {
+    font-size: 1.35rem;
+    font-weight: 400;
+}
+
+.footnote-text {
+    font-size: 1.05rem;
+    margin: 0;
+    font-style: normal;
+}
+
+/* ==========================================================================
+   Dashboard Adaptive Viewport Responsive Systems
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .huge-dash-title {
+        font-size: 3.8rem;
+    }
+
+    .large-dash-title {
+        font-size: 3rem;
+    }
+
+    .metrics-asymmetric-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .metric-block-card.large-card {
+        padding: 60px 40px;
+    }
+
+    .case-monitoring-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .monitoring-intro-column .large-dash-title {
+        font-size: 3.2rem;
+    }
+
+    .outreach-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dash-section-white,
+    .dash-section-beige {
+        padding: 65px 0;
+    }
+
+    .huge-dash-title {
+        font-size: 3.2rem;
+    }
+
+    .large-dash-title {
+        font-size: 2.6rem;
+    }
+
+    .metric-counter {
+        font-size: 4.2rem;
+    }
+
+    .metric-label {
+        font-size: 1.5rem;
+    }
+
+    .compact-goal {
+        font-size: 2rem;
+    }
+
+    .monitoring-card-title {
+        font-size: 2rem;
+    }
+
+    .monitoring-giant-number {
+        font-size: 4.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .huge-dash-title {
+        font-size: 2.6rem;
+    }
+
+    .large-dash-title {
+        font-size: 2.1rem;
+    }
+
+    .metric-block-card.large-card,
+    .metric-block-card.stacked-card {
+        padding: 45px 25px;
+    }
+
+    .inner-beige-display-card {
+        padding: 45px 20px;
+    }
+
+    .outreach-number {
+        font-size: 3.2rem;
+    }
+}
