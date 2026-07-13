@@ -2595,3 +2595,59 @@ a {
         font-size: 1.1rem;
     }
 }
+/* ==========================================================================
+   Global Floating Donate Button System
+   ========================================================================== */
+.global-floating-donate-btn {
+    position: fixed;
+    top: 130px; /* Suspends beautifully below the desktop header */
+    right: 24px;
+    background-color: #3a5cbf;
+    color: #ffffff !important;
+    padding: 12px 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none !important;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(58, 92, 191, 0.35);
+    z-index: 990; /* Floats above main content, but stays under active mobile overlays */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.global-floating-donate-btn:hover {
+    background-color: #2b4699;
+    transform: scale(1.05);
+    box-shadow: 0 6px 22px rgba(58, 92, 191, 0.5);
+}
+
+.global-floating-donate-btn i {
+    font-size: 0.95rem;
+}
+
+/* Responsive Adaptive Offsets for Global Displays */
+@media (max-width: 1024px) {
+    .global-floating-donate-btn {
+        top: 115px;
+        right: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .global-floating-donate-btn {
+        top: 105px;
+        right: 16px;
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .global-floating-donate-btn {
+        top: 100px;
+        right: 12px;
+    }
+}
