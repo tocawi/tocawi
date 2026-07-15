@@ -130,21 +130,21 @@
             <div class="projects-container">
                 <div class="stats-grid">
                     
-                    <!-- Stat 1 -->
+                    <!-- Stat 1 (Updated with ID) -->
                     <div class="stat-card">
-                        <div class="stat-number">15,000+</div>
+                        <div class="stat-number" id="animalsVaccinatedCount">...</div>
                         <div class="stat-label">ANIMALS VACCINATED</div>
                     </div>
 
-                    <!-- Stat 2 -->
+                    <!-- Stat 2 (Updated with ID) -->
                     <div class="stat-card">
-                        <div class="stat-number">42+</div>
+                        <div class="stat-number" id="subcountiesReachedCount">...</div>
                         <div class="stat-label">SUBCOUNTIES REACHED</div>
                     </div>
 
-                    <!-- Stat 3 -->
+                    <!-- Stat 3 (Updated with ID) -->
                     <div class="stat-card">
-                        <div class="stat-number">120+</div>
+                        <div class="stat-number" id="volunteersCount">...</div>
                         <div class="stat-label">VOLUNTEERS MOBILIZED</div>
                     </div>
 
@@ -252,6 +252,7 @@
     <!-- Global Navigation & Scroll Logic Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // UI Toggles
             const menuToggle = document.getElementById('menuToggle');
             const mobileNav = document.getElementById('mobileNav');
             const menuClose = document.getElementById('menuClose');
@@ -282,6 +283,57 @@
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             }
+
+            // --- DATA FETCHING & PROCESSING INTEGRATION ---
+            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbySj69wB7rwwMVvEy6trQprMTZR1pcrNP2E72AJRWowTEpxbuzHchJ1ZZlUQVo86mlG/exec"; // <-- Paste your deployment URL here
+
+            function fetchImpactData() {
+                // We only need the Main dataset (for animals/subcounties) and Join sheet (for volunteers)
+                Promise.all([
+                    fetch(SCRIPT_URL).then(res => res.json()), 
+                    fetch(SCRIPT_URL + "?sheet=Join").then(res => res.json()) 
+                ]).then(([petsRes, joinRes]) => {
+                    
+                    const petsArray = petsRes.data || [];
+                    const joinsArray = joinRes.data || [];
+                    
+                    // 1. Update Animals Vaccinated Count (formats with commas, e.g., 15,000)
+                    const animalsEl = document.getElementById('animalsVaccinatedCount');
+                    if (animalsEl) animalsEl.innerText = petsArray.length.toLocaleString();
+
+                    // 2. Update Volunteers Count
+                    const volEl = document.getElementById('volunteersCount');
+                    if (volEl) volEl.innerText = joinsArray.length;
+
+                    // 3. Process and Update Subcounties Reached
+                    updateSubcountiesReachedCount(petsArray);
+
+                }).catch(err => {
+                    console.error("Error fetching live impact data:", err);
+                });
+            }
+
+            function updateSubcountiesReachedCount(dataToRender) {
+                const uniqueSubcounties = {};
+
+                dataToRender.forEach(pet => {
+                    // Try to map by column name or fallback to index 12 (13th column)
+                    let subcounty = pet.Subcounty || pet.subcounty || Object.values(pet)[12] || 'Unknown';
+                    uniqueSubcounties[subcounty] = true;
+                });
+
+                // Filter out empty spaces and dummy data
+                const uniqueCount = Object.keys(uniqueSubcounties).filter(key => {
+                    const cleanKey = String(key).toLowerCase().trim();
+                    return cleanKey !== '' && cleanKey !== 'unknown' && cleanKey !== 'n/a' && cleanKey !== 'none' && cleanKey !== 'undefined';
+                }).length;
+
+                const subcountiesEl = document.getElementById('subcountiesReachedCount');
+                if (subcountiesEl) subcountiesEl.innerText = uniqueCount;
+            }
+
+            // Trigger fetch on load
+            fetchImpactData();
         });
     </script>
 </body>
