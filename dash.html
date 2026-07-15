@@ -81,7 +81,7 @@
                     
                     <!-- Large Primary Card (Left) -->
                     <div class="metric-block-card large-card">
-                        <div class="metric-counter text-orange">15,000+</div>
+                        <div class="metric-counter text-orange" id="animalsVaccinatedCount">15,000+</div>
                         <div class="metric-label text-blue georgia-title">Animals Vaccinated</div>
                     </div>
 
@@ -260,16 +260,20 @@
                     const petsArray = petsRes.data || [];
                     const reportsArray = reportRes.data || [];
                     const joinsArray = joinRes.data || [];
+
+                    // 1. Update Animals Vaccinated Count
+                    const animalsEl = document.getElementById('animalsVaccinatedCount');
+                    if (animalsEl) animalsEl.innerText = petsArray.length.toLocaleString();
                     
-                    // 1. Update Cases Reported Count
+                    // 2. Update Cases Reported Count
                     const casesEl = document.getElementById('casesReportedCount');
                     if (casesEl) casesEl.innerText = reportsArray.length;
 
-                    // 2. Update Volunteers Count
+                    // 3. Update Volunteers Count
                     const volEl = document.getElementById('volunteersCount');
                     if (volEl) volEl.innerText = joinsArray.length;
 
-                    // 3. Process and Update Subcounties Reached
+                    // 4. Process and Update Subcounties Reached
                     updateSubcountiesReachedCount(petsArray);
 
                 }).catch(err => {
