@@ -11,6 +11,7 @@
 </head>
 <body class="dash-page-body">
 
+    <!-- Site Header -->
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo-area">
@@ -39,11 +40,11 @@
             </button>
         </div>
     </header>
-
-    <a href="choices.html" class="global-floating-donate-btn" aria-label="Donate to ToCAWI">
-        <i class="fa-solid fa-heart"></i> Donate
-    </a>
-
+<!-- Global Floating Donate Button -->
+<a href="choices.html" class="global-floating-donate-btn" aria-label="Donate to ToCAWI">
+    <i class="fa-solid fa-heart"></i> Donate
+</a>
+    <!-- Mobile Navigation Overlay -->
     <div class="mobile-nav-overlay" id="mobileNav">
         <button class="close-menu" id="menuClose" aria-label="Close Navigation Menu">
             <i class="fa-solid xmark-icon fa-xmark"></i>
@@ -60,8 +61,10 @@
         </nav>
     </div>
 
+    <!-- Main Content Area -->
     <main class="dash-main-content">
         
+        <!-- SECTION 1: Live Impact Dashboard Intro Banner -->
         <section class="dash-section-white dash-hero-section">
             <div class="dash-container standard-reading-center text-center">
                 <h1 class="georgia-title huge-dash-title text-blue">Live Impact Dashboard</h1>
@@ -71,26 +74,32 @@
             </div>
         </section>
 
+        <!-- SECTION 2: Core Metrics (Asymmetrical Card Rows) -->
         <section class="dash-section-beige metrics-summary-section">
             <div class="dash-container">
                 <div class="metrics-asymmetric-grid">
                     
+                    <!-- Large Primary Card (Left) -->
                     <div class="metric-block-card large-card">
                         <div class="metric-counter text-orange">15,000+</div>
                         <div class="metric-label text-blue georgia-title">Animals Vaccinated</div>
                     </div>
 
+                    <!-- Side Stack Cards (Right Column) -->
                     <div class="metrics-side-stack">
+                        <!-- Top Side Card (Updated with ID) -->
                         <div class="metric-block-card stacked-card">
-                            <div class="metric-counter text-green" id="dash-subcounties">...</div>
+                            <div class="metric-counter text-green" id="subcountiesReachedCount">...</div>
                             <div class="metric-label text-blue georgia-title">Sub Counties Reached</div>
                         </div>
                         
+                        <!-- Middle Side Card (Added for Volunteers) -->
                         <div class="metric-block-card stacked-card">
-                            <div class="metric-counter text-orange" id="dash-volunteers">...</div>
+                            <div class="metric-counter text-orange" id="volunteersCount">...</div>
                             <div class="metric-label text-blue georgia-title">Active Volunteers</div>
                         </div>
 
+                        <!-- Bottom Side Card -->
                         <div class="metric-block-card stacked-card label-only-card">
                             <div class="metric-counter text-dark georgia-title compact-goal">2026 Goal: 25k Animals</div>
                         </div>
@@ -100,9 +109,11 @@
             </div>
         </section>
 
+        <!-- SECTION 3: Case Monitoring Split Board -->
         <section class="dash-section-white case-monitoring-section">
             <div class="dash-container case-monitoring-grid">
                 
+                <!-- Left Title Column -->
                 <div class="monitoring-intro-column">
                     <h2 class="georgia-title large-dash-title text-blue">Case Monitoring</h2>
                     <p class="body-text text-dark">
@@ -110,10 +121,11 @@
                     </p>
                 </div>
 
+                <!-- Right Highlight Box Column (Updated with ID) -->
                 <div class="monitoring-display-column">
                     <div class="inner-beige-display-card">
                         <h3 class="georgia-title monitoring-card-title text-blue">Cases Reported:</h3>
-                        <div class="monitoring-giant-number text-blue" id="dash-cases">...</div>
+                        <div class="monitoring-giant-number text-blue" id="casesReportedCount">...</div>
                         <p class="monitoring-rate-text text-dark">Response Rate: 100%</p>
                     </div>
                 </div>
@@ -121,9 +133,11 @@
             </div>
         </section>
 
+        <!-- SECTION 4: Education Outreach Centered Dashboard Matrix -->
         <section class="dash-section-beige education-outreach-section">
             <div class="dash-container">
                 
+                <!-- Top Header Text Block -->
                 <div class="outreach-header-block text-center">
                     <h2 class="georgia-title large-dash-title text-blue outreach-main-heading">Education Outreach</h2>
                     <p class="body-text text-dark max-width-center text-center">
@@ -131,25 +145,30 @@
                     </p>
                 </div>
 
+                <!-- Three Columns Card Grid -->
                 <div class="outreach-cards-grid">
                     
+                    <!-- Card 1 -->
                     <div class="outreach-metric-card">
-                        <div class="outreach-number text-green" id="dash-schools">...</div>
+                        <div class="outreach-number text-green">120+</div>
                         <div class="outreach-label text-blue">School Sessions</div>
                     </div>
 
+                    <!-- Card 2 -->
                     <div class="outreach-metric-card">
-                        <div class="outreach-number text-green" id="dash-talks">...</div>
+                        <div class="outreach-number text-green">45</div>
                         <div class="outreach-label text-blue">Community Talks</div>
                     </div>
 
+                    <!-- Card 3 -->
                     <div class="outreach-metric-card">
-                        <div class="outreach-number text-green" id="dash-reached">...</div>
+                        <div class="outreach-number text-green">5,000+</div>
                         <div class="outreach-label text-blue">People Reached</div>
                     </div>
 
                 </div>
 
+                <!-- Footnote Notice Bottom -->
                 <div class="outreach-footnote text-center">
                     <p class="footnote-text text-dark">Note: Outreach numbers are regularly monitored and updated every Friday to reflect the latest field activity.</p>
                 </div>
@@ -159,6 +178,7 @@
 
     </main>
 
+    <!-- Site Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-branding">
@@ -187,66 +207,15 @@
         <div class="footer-accent-line"></div>
     </footer>
 
+    <!-- Fixed Scroll-to-Top Button -->
     <button id="floatingBackToTop" class="floating-top-btn" aria-label="Scroll Back To Top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
+    <!-- Navigation & UI Controller Scripts -->
     <script>
-        // --- 1. GAS Backend Fetch Logic ---
-        const GAS_URL = 'https://script.google.com/macros/s/AKfycbySj69wB7rwwMVvEy6trQprMTZR1pcrNP2E72AJRWowTEpxbuzHchJ1ZZlUQVo86mlG/exec';
-
-        async function fetchLiveMetrics() {
-            try {
-                const response = await fetch(GAS_URL);
-                if (!response.ok) throw new Error('Network response was not ok');
-                
-                const data = await response.json();
-
-                // 1. Core Metrics & Case Monitoring
-                if (data.subCounties !== undefined) {
-                    document.getElementById('dash-subcounties').innerText = data.subCounties + '+';
-                }
-                if (data.volunteers !== undefined) {
-                    document.getElementById('dash-volunteers').innerText = data.volunteers;
-                }
-                if (data.cases !== undefined) {
-                    document.getElementById('dash-cases').innerText = data.cases.toString().padStart(2, '0');
-                }
-
-                // 2. Education Outreach Metrics
-                if (data.schoolSessions !== undefined) {
-                    document.getElementById('dash-schools').innerText = data.schoolSessions + '+';
-                }
-                if (data.communityTalks !== undefined) {
-                    document.getElementById('dash-talks').innerText = data.communityTalks;
-                }
-                if (data.peopleReached !== undefined) {
-                    // Formats large numbers cleanly with commas (e.g., 5,000+)
-                    const formattedReached = Number(data.peopleReached).toLocaleString();
-                    document.getElementById('dash-reached').innerText = formattedReached + '+';
-                }
-
-            } catch (error) {
-                console.error("Error fetching dashboard metrics: ", error);
-                
-                // Keep UI logical by reverting to safe fallbacks if the endpoint fails
-                document.getElementById('dash-subcounties').innerText = '85+';
-                document.getElementById('dash-volunteers').innerText = '45';
-                document.getElementById('dash-cases').innerText = '00';
-                
-                document.getElementById('dash-schools').innerText = '120+';
-                document.getElementById('dash-talks').innerText = '45';
-                document.getElementById('dash-reached').innerText = '5,000+';
-            }
-        }
-
-        // --- 2. Existing Page UI Logic ---
         document.addEventListener('DOMContentLoaded', function() {
-            
-            // Trigger backend fetch immediately on page load
-            fetchLiveMetrics();
-
-            // Mobile Menu Toggle
+            // UI Toggles
             const menuToggle = document.getElementById('menuToggle');
             const mobileNav = document.getElementById('mobileNav');
             const menuClose = document.getElementById('menuClose');
@@ -264,7 +233,6 @@
                 });
             }
 
-            // Scroll to Top behavior
             if(scrollTopBtn) {
                 window.addEventListener('scroll', function() {
                     if (window.scrollY > 400) {
@@ -278,6 +246,59 @@
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             }
+
+            // --- DATA FETCHING & PROCESSING INTEGRATION ---
+            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbySj69wB7rwwMVvEy6trQprMTZR1pcrNP2E72AJRWowTEpxbuzHchJ1ZZlUQVo86mlG/exec"; // <-- Paste your deployment URL here
+
+            function fetchDashboardData() {
+                Promise.all([
+                    fetch(SCRIPT_URL).then(res => res.json()), // PetsData (Main dataset for subcounties)
+                    fetch(SCRIPT_URL + "?sheet=Report").then(res => res.json()), // Cases
+                    fetch(SCRIPT_URL + "?sheet=Join").then(res => res.json()) // Volunteers
+                ]).then(([petsRes, reportRes, joinRes]) => {
+                    
+                    const petsArray = petsRes.data || [];
+                    const reportsArray = reportRes.data || [];
+                    const joinsArray = joinRes.data || [];
+                    
+                    // 1. Update Cases Reported Count
+                    const casesEl = document.getElementById('casesReportedCount');
+                    if (casesEl) casesEl.innerText = reportsArray.length;
+
+                    // 2. Update Volunteers Count
+                    const volEl = document.getElementById('volunteersCount');
+                    if (volEl) volEl.innerText = joinsArray.length;
+
+                    // 3. Process and Update Subcounties Reached
+                    updateSubcountiesReachedCount(petsArray);
+
+                }).catch(err => {
+                    console.error("Error fetching live dashboard data:", err);
+                    // Optional fallback logic if fetch fails
+                });
+            }
+
+            function updateSubcountiesReachedCount(dataToRender) {
+                const uniqueSubcounties = {};
+
+                dataToRender.forEach(pet => {
+                    // Try to map by column name or fallback to index 12 (13th column)
+                    let subcounty = pet.Subcounty || pet.subcounty || Object.values(pet)[12] || 'Unknown';
+                    uniqueSubcounties[subcounty] = true;
+                });
+
+                // Filter out empty spaces and dummy data
+                const uniqueCount = Object.keys(uniqueSubcounties).filter(key => {
+                    const cleanKey = String(key).toLowerCase().trim();
+                    return cleanKey !== '' && cleanKey !== 'unknown' && cleanKey !== 'n/a' && cleanKey !== 'none' && cleanKey !== 'undefined';
+                }).length;
+
+                const subcountiesEl = document.getElementById('subcountiesReachedCount');
+                if (subcountiesEl) subcountiesEl.innerText = uniqueCount;
+            }
+
+            // Trigger fetch on load
+            fetchDashboardData();
         });
     </script>
 </body>
