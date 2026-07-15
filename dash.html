@@ -134,17 +134,17 @@
                 <div class="outreach-cards-grid">
                     
                     <div class="outreach-metric-card">
-                        <div class="outreach-number text-green">120+</div>
+                        <div class="outreach-number text-green" id="dash-schools">...</div>
                         <div class="outreach-label text-blue">School Sessions</div>
                     </div>
 
                     <div class="outreach-metric-card">
-                        <div class="outreach-number text-green">45</div>
+                        <div class="outreach-number text-green" id="dash-talks">...</div>
                         <div class="outreach-label text-blue">Community Talks</div>
                     </div>
 
                     <div class="outreach-metric-card">
-                        <div class="outreach-number text-green">5,000+</div>
+                        <div class="outreach-number text-green" id="dash-reached">...</div>
                         <div class="outreach-label text-blue">People Reached</div>
                     </div>
 
@@ -193,16 +193,16 @@
 
     <script>
         // --- 1. GAS Backend Fetch Logic ---
-        const GAS_URL = 'https://script.google.com/macros/s/AKfycbySj69wB7rwwMVvEy6trQprMTZR1pcrNP2E72AJRWowTEpxbuzHchJ1ZZlUQVo86mlG/exec'; // <-- REPLACE THIS STRING
+        const GAS_URL = 'https://script.google.com/macros/s/AKfycbySj69wB7rwwMVvEy6trQprMTZR1pcrNP2E72AJRWowTEpxbuzHchJ1ZZlUQVo86mlG/exec';
 
         async function fetchLiveMetrics() {
             try {
                 const response = await fetch(GAS_URL);
                 if (!response.ok) throw new Error('Network response was not ok');
                 
-                // Assuming your GAS outputs JSON keys: { "subCounties": 85, "volunteers": 50, "cases": 12 }
                 const data = await response.json();
 
+                // 1. Core Metrics & Case Monitoring
                 if (data.subCounties !== undefined) {
                     document.getElementById('dash-subcounties').innerText = data.subCounties + '+';
                 }
@@ -210,16 +210,33 @@
                     document.getElementById('dash-volunteers').innerText = data.volunteers;
                 }
                 if (data.cases !== undefined) {
-                    // padStart adds a leading zero if it's a single digit, matching your '00' aesthetic
                     document.getElementById('dash-cases').innerText = data.cases.toString().padStart(2, '0');
+                }
+
+                // 2. Education Outreach Metrics
+                if (data.schoolSessions !== undefined) {
+                    document.getElementById('dash-schools').innerText = data.schoolSessions + '+';
+                }
+                if (data.communityTalks !== undefined) {
+                    document.getElementById('dash-talks').innerText = data.communityTalks;
+                }
+                if (data.peopleReached !== undefined) {
+                    // Formats large numbers cleanly with commas (e.g., 5,000+)
+                    const formattedReached = Number(data.peopleReached).toLocaleString();
+                    document.getElementById('dash-reached').innerText = formattedReached + '+';
                 }
 
             } catch (error) {
                 console.error("Error fetching dashboard metrics: ", error);
-                // Fallback default values if the fetch fails
+                
+                // Keep UI logical by reverting to safe fallbacks if the endpoint fails
                 document.getElementById('dash-subcounties').innerText = '85+';
                 document.getElementById('dash-volunteers').innerText = '45';
                 document.getElementById('dash-cases').innerText = '00';
+                
+                document.getElementById('dash-schools').innerText = '120+';
+                document.getElementById('dash-talks').innerText = '45';
+                document.getElementById('dash-reached').innerText = '5,000+';
             }
         }
 
