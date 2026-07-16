@@ -6,6 +6,9 @@
     <title>Submit Report</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    
     <style>
         :root {
             --primary: #3a5cbf;
@@ -136,6 +139,9 @@
 </div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
 <script>
     const URL = "https://script.google.com/macros/s/AKfycbw99ky6ehUTiahswg7wxGcNUb4FaRReTJAzjVz76q0adGsMEBWvq_Rj2BVny8pWZHh2/exec";
     
@@ -146,6 +152,29 @@
     function initReportingMap() {
         map = L.map('map').setView([-1.25, 36.71], 11);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        // --- NEW SEARCH FUNCTIONALITY ADDED HERE ---
+        L.Control.geocoder({
+            position: 'topright',
+            defaultMarkGeocode: false // Prevents the plugin from adding its own default marker
+        }).on('markgeocode', function(e) {
+            const latlng = e.geocode.center;
+            
+            // Narrows down onto the area searched
+            map.fitBounds(e.geocode.bbox);
+
+            // Set the marker to the searched location automatically
+            if (mapMarker) {
+                mapMarker.setLatLng(latlng);
+            } else {
+                mapMarker = L.marker(latlng).addTo(map);
+            }
+
+            // Update coordinate inputs
+            document.getElementById('lat').value = latlng.lat.toFixed(6);
+            document.getElementById('lng').value = latlng.lng.toFixed(6);
+        }).addTo(map);
+        // -------------------------------------------
 
         map.on('click', (e) => {
             const latitude = e.latlng.lat;
