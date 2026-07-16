@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
     
     <style>
         :root {
@@ -36,7 +37,7 @@
         label { display: block; font-size: 1rem; font-weight: 500; margin-bottom: 10px; color: var(--text); }
         label .required { color: var(--asterisk); margin-left: 3px; font-weight: 600; }
         
-        input[type="text"], input[type="email"], input[type="tel"], textarea, input[type="file"] {
+        input[type="text"], input[type="email"], textarea, input[type="file"] {
             width: 100%;
             padding: 14px 16px;
             border: 1px solid var(--border);
@@ -50,54 +51,26 @@
         input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(58, 92, 191, 0.15); }
         textarea { min-height: 100px; resize: vertical; }
 
-        /* Country Code Selector Styling */
-        .phone-input-wrapper {
-            display: flex;
-            align-items: center;
+        /* Style the dynamic international telephone input container */
+        .iti { width: 100%; }
+        .iti input[type="tel"] {
+            width: 100%;
+            padding: 14px 16px;
             border: 1px solid var(--border);
             border-radius: 6px;
+            font-size: 1rem;
+            color: var(--text);
             background-color: #fff;
             transition: all 0.2s ease;
-            overflow: hidden;
+            outline: none;
         }
-        .phone-input-wrapper:focus-within {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(58, 92, 191, 0.15);
+        .iti input[type="tel"]:focus { 
+            border-color: var(--primary); 
+            box-shadow: 0 0 0 3px rgba(58, 92, 191, 0.15); 
         }
-        .phone-prefix {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 16px;
-            background-color: #f1f3f5;
-            border-right: 1px solid var(--border);
-            color: var(--text);
-            font-size: 1rem;
-            font-weight: 500;
-            user-select: none;
-        }
-        .phone-prefix svg {
-            display: block;
-            border-radius: 2px;
-        }
-        .phone-prefix .arrow {
-            font-size: 0.75rem;
-            color: #718096;
-            margin-left: 2px;
-        }
-        /* Override standard text styles for phone input inside wrapper */
-        .phone-input-wrapper input[type="text"], .phone-input-wrapper input[type="tel"] {
-            border: none !important;
-            border-radius: 0 !important;
-            padding: 14px 16px !important;
-            margin: 0 !important;
-            flex: 1;
-            background-color: transparent !important;
-            width: 100%;
-        }
-        .phone-input-wrapper input[type="text"]:focus, .phone-input-wrapper input[type="tel"]:focus {
-            box-shadow: none !important;
-            border-color: transparent !important;
+        .iti__country-list {
+            z-index: 10000; /* Dropdown displays above the map controls */
+            background-color: #ffffff;
         }
 
         #map { height: 240px; width: 100%; border-radius: 6px; border: 1px solid var(--border); margin-bottom: 12px; z-index: 1; }
@@ -180,28 +153,7 @@
 
         <div class="form-group">
             <label>Phone Number</label>
-            <div class="phone-input-wrapper">
-                <div class="phone-prefix">
-                    <!-- Kenya Flag SVG -->
-                    <svg class="flag-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24" width="24" height="16">
-                        <rect width="36" height="24" fill="#008C51"/>
-                        <rect width="36" height="16" fill="#BB0A30"/>
-                        <rect width="36" height="8" fill="#000000"/>
-                        <rect y="7.2" width="36" height="1.6" fill="#FFFFFF"/>
-                        <rect y="15.2" width="36" height="1.6" fill="#FFFFFF"/>
-                        <!-- Crossed Spears -->
-                        <path d="M 13,19 L 23,5 M 23,19 L 13,5" stroke="#FFFFFF" stroke-width="1.2"/>
-                        <!-- Shield -->
-                        <path d="M 18,4 C 21,8 21,16 18,20 C 15,16 15,8 18,4 Z" fill="#000000"/>
-                        <path d="M 18,5 C 20,8 20,16 18,19 C 16,16 16,8 18,5 Z" fill="#BB0A30"/>
-                        <circle cx="18" cy="12" r="1" fill="#FFFFFF"/>
-                        <path d="M 18,8 L 18,16" stroke="#FFFFFF" stroke-width="1"/>
-                    </svg>
-                    <span>+254</span>
-                    <span class="arrow">▼</span>
-                </div>
-                <input type="tel" id="phone" placeholder="712 123456">
-            </div>
+            <input type="tel" id="phone" placeholder="712 123456">
         </div>
 
         <div class="form-group">
@@ -234,12 +186,21 @@
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
 
 <script>
     const URL = "https://script.google.com/macros/s/AKfycbzn84uYSFZC1mhsTQsi93Qzq7ahCmFl47K5JPacEv4h3x2h2koyKSXLlhhnq9XA_nyB/exec";
     
     let map, mapMarker;
     let base64ImageString = "";
+
+    // Initialize the selectable flag engine with Kenya as default
+    const phoneInput = document.querySelector("#phone");
+    const iti = window.intlTelInput(phoneInput, {
+        initialCountry: "ke",
+        separateDialCode: true,
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+    });
 
     function initReportingMap() {
         map = L.map('map', {
@@ -357,12 +318,8 @@
         loader.style.display = 'flex';
         status.className = 'status-banner';
 
-        // Read dynamic phone input value and format correctly with +254 prefix
-        let rawPhone = document.getElementById('phone').value.trim();
-        let formattedPhone = rawPhone;
-        if (rawPhone && !rawPhone.startsWith('+') && !rawPhone.startsWith('254')) {
-            formattedPhone = '+254 ' + rawPhone;
-        }
+        // Extract the complete selectable international number sequence
+        const dynamicFullNumber = iti.getNumber();
 
         try {
             await fetch(URL, {
@@ -372,7 +329,7 @@
                 body: JSON.stringify({
                     action: 'report',
                     name: document.getElementById('reportName').value,
-                    phone: formattedPhone, // Cleanly formatted phone prefix logic
+                    phone: dynamicFullNumber,
                     email: document.getElementById('email').value,
                     description: document.getElementById('description').value,
                     photo: base64ImageString,
