@@ -156,16 +156,7 @@
 .member-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-}
-
-.member-name {
-    font-family: Georgia, serif; /* Updated to Georgia */
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #3b60c0;
-    margin: 5px 0 0 0;
-    line-height: 1.3;
+    object-fit: contain; /* Changed from 'cover' to 'contain' to display full team photos without truncation */
 }
 
 /* Volunteer Frame Container Strip */
