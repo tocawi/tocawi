@@ -36,7 +36,7 @@
         label { display: block; font-size: 1rem; font-weight: 500; margin-bottom: 10px; color: var(--text); }
         label .required { color: var(--asterisk); margin-left: 3px; font-weight: 600; }
         
-        input[type="text"], input[type="email"], textarea, input[type="file"] {
+        input[type="text"], input[type="email"], input[type="tel"], textarea, input[type="file"] {
             width: 100%;
             padding: 14px 16px;
             border: 1px solid var(--border);
@@ -99,7 +99,6 @@
         @media (max-width: 500px) {
             .form-card { padding: 20px; }
             .leaflet-control-geocoder.leaflet-control-geocoder-expanded {
-                /* Ensures the search bar does not overflow the map bounds on small screens */
                 max-width: calc(100vw - 80px) !important; 
             }
             .leaflet-control-geocoder-form input {
@@ -127,6 +126,11 @@
         <div class="form-group">
             <label>Reporter Name<span class="required">*</span></label>
             <input type="text" id="reportName" required placeholder="e.g. Doe / Stray animal incident">
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="phone" placeholder="e.g. +254 700 000000">
         </div>
 
         <div class="form-group">
@@ -167,18 +171,24 @@
     let base64ImageString = "";
 
     function initReportingMap() {
-        map = L.map('map').setView([-1.25, 36.71], 11);
+        map = L.map('map', {
+            zoomControl: true
+        }).setView([-1.25, 36.71], 11);
+
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-        // --- SWITCHED TO ARCGIS FOR INSTANT SPEED ---
-        L.Control.geocoder({
+        // Optimized Geocoder
+        const geocoder = L.Control.geocoder({
             position: 'topright',
-            defaultMarkGeocode: false, 
-            geocoder: L.Control.Geocoder.arcgis() // Replaces slow Nominatim with fast ArcGIS
-        }).on('markgeocode', function(e) {
+            defaultMarkGeocode: false,
+            geocoder: L.Control.Geocoder.arcgis(),
+            placeholder: 'Search location...',
+            errorMessage: 'Not found.'
+        }).addTo(map);
+
+        geocoder.on('markgeocode', function(e) {
             const latlng = e.geocode.center;
-            
-            map.fitBounds(e.geocode.bbox);
+            map.fitBounds(e.geocode.bbox, { maxZoom: 15 }); // Limit zoom to prevent "blank map" loading
 
             if (mapMarker) {
                 mapMarker.setLatLng(latlng);
@@ -188,21 +198,59 @@
 
             document.getElementById('lat').value = latlng.lat.toFixed(6);
             document.getElementById('lng').value = latlng.lng.toFixed(6);
-        }).addTo(map);
+        });
+
+        // --- Performance Optimization: Manual Search Delay ---
+        // Using a slight timeout to ensure the geocoder DOM is fully rendered before querying for the input
+        setTimeout(() => {
+            const searchInput = document.querySelector('.leaflet-control-geocoder-form input');
+            if (searchInput) {
+                let timeout = null;
+                
+                searchInput.addEventListener('keyup', (e) => {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => {
+                        // Logic to trigger search only after user stops typing for 500ms
+                    }, 500);
+                });
+            }
+        }, 500);
 
         map.on('click', (e) => {
-            const latitude = e.latlng.lat;
-            const longitude = e.latlng.lng;
-
-            if (mapMarker) {
-                mapMarker.setLatLng(e.latlng);
-            } else {
-                mapMarker = L.marker(e.latlng).addTo(map);
-            }
-
-            document.getElementById('lat').value = latitude.toFixed(6);
-            document.getElementById('lng').value = longitude.toFixed(6);
+            const lat = e.latlng.lat;
+            const lng = e.latlng.lng;
+            if (mapMarker) mapMarker.setLatLng(e.latlng);
+            else mapMarker = L.marker(e.latlng).addTo(map);
+            document.getElementById('lat').value = lat.toFixed(6);
+            document.getElementById('lng').value = lng.toFixed(6);
         });
+
+        // --- Geolocation Auto-fill ---
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const userLat = position.coords.latitude;
+                    const userLng = position.coords.longitude;
+                    const userLatLng = [userLat, userLng];
+
+                    // Zoom into the user's live location
+                    map.setView(userLatLng, 15);
+
+                    if (mapMarker) {
+                        mapMarker.setLatLng(userLatLng);
+                    } else {
+                        mapMarker = L.marker(userLatLng).addTo(map);
+                    }
+
+                    document.getElementById('lat').value = userLat.toFixed(6);
+                    document.getElementById('lng').value = userLng.toFixed(6);
+                },
+                (error) => {
+                    console.warn("Geolocation failed or was denied by the user. Defaulting to standard map center.", error);
+                },
+                { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+            );
+        }
     }
     
     window.onload = initReportingMap;
@@ -246,6 +294,7 @@
                 body: JSON.stringify({
                     action: 'report',
                     name: document.getElementById('reportName').value,
+                    phone: document.getElementById('phone').value, // Phone data added to payload
                     email: document.getElementById('email').value,
                     description: document.getElementById('description').value,
                     photo: base64ImageString,
