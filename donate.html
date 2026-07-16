@@ -103,6 +103,16 @@
         </div>
 
         <div class="form-group">
+            <label>Phone<span class="required">*</span></label>
+            <input type="text" id="phone" required placeholder="e.g. +1 234 567 8900">
+        </div>
+
+        <div class="form-group">
+            <label>Amount<span class="required">*</span></label>
+            <input type="text" id="amount" required placeholder="e.g. 50.00">
+        </div>
+
+        <div class="form-group">
             <label>Email address<span class="required">*</span></label>
             <input type="email" id="email" required placeholder="e.g. jane@example.com">
         </div>
@@ -135,6 +145,8 @@
                 body: JSON.stringify({
                     action: 'donate',
                     name: document.getElementById('name').value,
+                    phone: document.getElementById('phone').value,
+                    amount: document.getElementById('amount').value,
                     email: document.getElementById('email').value,
                     paymentMessage: document.getElementById('paymentMessage').value
                 })
