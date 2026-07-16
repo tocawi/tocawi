@@ -6,7 +6,6 @@
     <title>Submit Report</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     
     <style>
@@ -92,6 +91,26 @@
 
         .status-banner { display: none; padding: 14px; border-radius: 6px; margin-bottom: 20px; text-align: center; font-weight: 500; }
         .success { display: block; background: #e6f7ed; color: #1e6b41; }
+
+        /* --- MOBILE RESPONSIVE TWEAKS FOR GEOCODER --- */
+        .leaflet-control-geocoder-form input {
+            font-size: 16px !important; /* Prevents auto-zoom on iOS Safari */
+        }
+        @media (max-width: 500px) {
+            .form-card { padding: 20px; }
+            .leaflet-control-geocoder.leaflet-control-geocoder-expanded {
+                /* Ensures the search bar does not overflow the map bounds on small screens */
+                max-width: calc(100vw - 80px) !important; 
+            }
+            .leaflet-control-geocoder-form input {
+                width: 100% !important;
+                max-width: 220px; 
+            }
+            .leaflet-control-geocoder-alternatives {
+                max-width: calc(100vw - 80px) !important;
+                white-space: normal;
+            }
+        }
     </style>
 </head>
 <body>
@@ -139,7 +158,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
 <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
 <script>
@@ -148,40 +166,29 @@
     let map, mapMarker;
     let base64ImageString = "";
 
-    // Map configuration setup defaulting center directly over Kiambu region bounds
     function initReportingMap() {
         map = L.map('map').setView([-1.25, 36.71], 11);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-        // --- OPTIMIZED SEARCH FUNCTIONALITY ---
+        // --- SWITCHED TO ARCGIS FOR INSTANT SPEED ---
         L.Control.geocoder({
             position: 'topright',
             defaultMarkGeocode: false, 
-            // Narrow search parameters to drastically improve query speed
-            geocoder: L.Control.Geocoder.nominatim({
-                geocodingQueryParams: {
-                    countrycodes: 'ke', // Restricts search specifically to Kenya
-                    limit: 4            // Limits results payload to make network request faster
-                }
-            })
+            geocoder: L.Control.Geocoder.arcgis() // Replaces slow Nominatim with fast ArcGIS
         }).on('markgeocode', function(e) {
             const latlng = e.geocode.center;
             
-            // Narrows down onto the area searched
             map.fitBounds(e.geocode.bbox);
 
-            // Set the marker to the searched location automatically
             if (mapMarker) {
                 mapMarker.setLatLng(latlng);
             } else {
                 mapMarker = L.marker(latlng).addTo(map);
             }
 
-            // Update coordinate inputs
             document.getElementById('lat').value = latlng.lat.toFixed(6);
             document.getElementById('lng').value = latlng.lng.toFixed(6);
         }).addTo(map);
-        // -------------------------------------------
 
         map.on('click', (e) => {
             const latitude = e.latlng.lat;
@@ -200,7 +207,6 @@
     
     window.onload = initReportingMap;
 
-    // Fast Canvas engine file compressor to avoid memory exceptions within downstream Sheet storage
     document.getElementById('photo').addEventListener('change', (e) => {
         const selectedFile = e.target.files[0];
         if (!selectedFile) return;
