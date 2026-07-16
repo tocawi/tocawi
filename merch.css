@@ -1,0 +1,347 @@
+/* ==========================================================================
+   Merch Page Custom Template Stylesheet
+   ========================================================================== */
+
+/* Page Base Structural Setup Canvas */
+.merch-page-body {
+    background-color: #ffffff;
+    color: #4a4a4a;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.merch-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Base Canvas Modifiers */
+.bg-ivory { background-color: #f6f4ee; }
+.text-center { text-align: center; }
+
+/* Typography Architecture */
+.merch-main-title {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: 4.2rem;
+    color: #3b60c0; /* Signature Royal Blue */
+    margin: 0 0 25px 0;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.section-title {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #3b60c0;
+    margin-top: 0;
+    margin-bottom: 50px;
+    letter-spacing: -0.5px;
+}
+
+/* Hero Section styles matching image_94c9e8.jpg layout structures */
+.merch-hero-section {
+    background-color: #ffffff;
+    padding: 90px 0;
+    overflow: hidden;
+}
+
+.hero-split-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-left-text {
+    flex: 12;
+}
+
+.hero-intro-paragraph {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #3b60c0; /* Uses Signature Royal Blue style in hero text */
+    margin-bottom: 0;
+}
+
+.hero-right-media-frame {
+    flex: 10;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.merch-image-wrapper {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 12px; /* Smooth rounded photo container edges */
+    overflow: hidden;
+}
+
+.merch-media-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Grid Framework Architecture matches Catalog Layout */
+.merch-catalog-section {
+    padding: 90px 0;
+}
+
+.merch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Card Nodes Styles Structure matches image_94caa7.jpg, image_94cd8c.jpg, etc. */
+.merch-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border: 1px solid #f0eeeb;
+}
+
+.merch-img-container {
+    background-color: #ffffff;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.merch-item-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 240px;
+    object-fit: contain;
+    display: block;
+}
+
+.merch-info-container {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.merch-item-title {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: 1.45rem;
+    color: #3b60c0;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+}
+
+.merch-item-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555555;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+}
+
+.merch-item-donation {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #3da62b; /* Vibrant Green donation text accent color */
+    margin: 0 0 20px 0;
+}
+
+/* Rounded Pill outline Action Button style matches screenshots */
+.merch-select-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    color: #3b60c0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 12px 20px;
+    border: 1px solid #e07a44; /* Terracotta Outline accent border */
+    border-radius: 50px; /* Pill shape */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.merch-select-btn:hover {
+    background-color: #e07a44;
+    color: #ffffff;
+}
+
+/* Call To Action Block Layout matches image_94ce66.png rules */
+.merch-impact-cta {
+    background-color: #3b60c0; /* Solid Signature Royal Blue canvas backgrounds */
+    padding: 90px 0;
+    color: #ffffff;
+}
+
+.cta-subtitle {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.cta-title {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin: 0 0 24px 0;
+    letter-spacing: -0.5px;
+}
+
+.cta-paragraph {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    opacity: 0.95;
+}
+
+.cta-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+/* Solid White pill CTA button matches design blueprint */
+.cta-btn-primary {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #3b60c0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 15px 35px;
+    border-radius: 50px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cta-btn-primary:hover {
+    background-color: #f0eeeb;
+    transform: translateY(-2px);
+}
+
+/* Outlined transparent pill CTA button matches blueprint */
+.cta-btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 15px 35px;
+    border-radius: 50px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cta-btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Circle dog photo layout underneath buttons */
+.cta-dog-avatar {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.avatar-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ==========================================================================
+   Responsive Viewports Media Framework Overrides
+   ========================================================================== */
+
+@media (max-width: 1150px) {
+    .merch-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    .hero-split-flex {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    .hero-left-text, .hero-right-media-frame {
+        width: 100%;
+    }
+    .hero-right-media-frame {
+        justify-content: center;
+    }
+    .merch-main-title {
+        font-size: 3.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .merch-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-title {
+        font-size: 2.3rem;
+        margin-bottom: 35px;
+    }
+    .cta-title {
+        font-size: 2.4rem;
+    }
+    .cta-paragraph {
+        font-size: 1.1rem;
+    }
+    .cta-buttons-container {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    .cta-btn-primary, .cta-btn-secondary {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 520px) {
+    .merch-hero-section, .merch-catalog-section, .merch-impact-cta {
+        padding: 60px 0;
+    }
+    .merch-main-title {
+        font-size: 2.6rem;
+    }
+    .avatar-img {
+        width: 110px;
+        height: 110px;
+    }
+}
