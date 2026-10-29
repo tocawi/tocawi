@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - ToCAWI</title>
+    <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome icons for 6.5.2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght=700;900&family=Inter:wght=400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="contact-page-body">
 
-    <!-- Site Header -->
+    <!-- Header / Navigation Bar -->
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo-area">
@@ -21,6 +24,7 @@
                 </div>
             </a>
             
+            <!-- Desktop Navigation Links -->
             <nav class="desktop-nav">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About Us</a>
@@ -32,6 +36,7 @@
                 <a href="emergency.html" class="nav-link">Emergency Info Page</a>
             </nav>
 
+            <!-- Hamburger Button for Mobile Menu -->
             <button class="menu-toggle" id="menuToggle" aria-label="Open Navigation Menu">
                 <span class="hamburger-bar"></span>
                 <span class="hamburger-bar"></span>
@@ -45,7 +50,7 @@
         <i class="fa-solid fa-heart"></i> Donate
     </a>
 
-    <!-- Mobile Navigation Overlay -->
+    <!-- Full-Screen Mobile Navigation Overlay -->
     <div class="mobile-nav-overlay" id="mobileNav">
         <button class="close-menu" id="menuClose" aria-label="Close Navigation Menu">
             <i class="fa-solid xmark-icon fa-xmark"></i>
@@ -62,32 +67,33 @@
         </nav>
     </div>
 
-    <!-- Main Content Area -->
-    <main class="contact-main-content">
-        
-        <!-- Hero Section -->
-        <section class="hero-section" style="display: flex; align-items: center; justify-content: space-between; padding: 60px 20px; max-width: 1200px; margin: 0 auto; gap: 40px; flex-wrap: wrap;">
-            <div class="hero-text-content" style="flex: 1; min-width: 300px;">
-                <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Contact Us</h1>
-                <p style="font-size: 1.1rem; line-height: 1.6;">
+    <main>
+        <!-- Hero Section with Background Image and Times New Roman Styling -->
+        <section class="hero-section" style="position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #ffffff; padding: 80px 20px; overflow: hidden;">
+            <!-- Explicit Background Image Tag -->
+            <img src="images/machakos-outreach.jpg" alt="Machakos Outreach" class="hero-bg-img" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;">
+            <div class="hero-bg-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.55); z-index: -1;"></div>
+            
+            <div class="hero-content" style="max-width: 900px; margin: 0 auto; font-family: 'Times New Roman', Times, serif;">
+                <h2 class="hero-title" style="font-size: 3rem; font-weight: bold; margin-bottom: 25px; font-family: 'Times New Roman', Times, serif; letter-spacing: 1px;">Contact Us</h2>
+                <p class="hero-subtitle" style="font-size: 1.25rem; line-height: 1.8; font-family: 'Times New Roman', Times, serif; text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
                     We foster a welcoming community and would love to hear from you. Whether you are looking to volunteer, establish a partnership, or have an urgent rabies-related query, please reach out. While our central hub is located in Upper Hill, our health clinics and community education programs run actively across multiple communities throughout Kenya. Our clinics and programs run across multiple communities in Kenya, bringing vital welfare services directly to those in need.
                 </p>
             </div>
-            <div class="hero-image-content" style="flex: 1; min-width: 300px; text-align: center;">
-                <img src="images/machakos-outreach.jpg" alt="Machakos Outreach" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
-            </div>
         </section>
-
     </main>
 
-    <!-- Site Footer -->
+    <!-- Footer Area -->
     <footer class="site-footer">
         <div class="footer-container">
+            <!-- Footer Branding Identity -->
             <div class="footer-branding">
                 <img src="images/logo.png" alt="ToCAWI Badge" class="footer-logo-img">
                 <h2 class="footer-logo-title">ToCAWI</h2>
                 <p class="footer-logo-sub">Tails of Care Animal Welfare Initiative</p>
             </div>
+
+            <!-- Footer Contact Details -->
             <div class="footer-contact-details">
                 <p>Upperhill Gardens</p>
                 <p>P.O. Box 54052, 00200</p>
@@ -95,6 +101,8 @@
                 <p>0180555462</p>
                 <p><a href="mailto:thetailsofcare@gmail.com" class="footer-email">thetailsofcare@gmail.com</a></p>
             </div>
+
+            <!-- Social Links Grid Wrapper -->
             <div class="footer-social-wrapper">
                 <a href="https://www.facebook.com/people/Tails-of-Care-Animal-Welfare-Initiative/61591902594842/" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/thetailsofcare?utm_source=qr" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -103,6 +111,8 @@
                 <a href="https://www.linkedin.com/in/the-tails-of-care-92ab443bb/" class="social-icon linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://www.tiktok.com/@tailsofcare" class="social-icon tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             </div>
+
+            <!-- Copyright Declaration Text -->
             <div class="footer-copyright">
                 &copy; 2026 ToCAWI. All rights reserved. Registered PBO#8892.
             </div>
@@ -110,12 +120,12 @@
         <div class="footer-accent-line"></div>
     </footer>
 
-    <!-- Fixed Scroll-to-Top Button Layout Element -->
+    <!-- Floating Back to Top Button Module -->
     <button id="floatingBackToTop" class="floating-top-btn" aria-label="Scroll Back To Top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- Scripts -->
+    <!-- Embedded JavaScript for Mobile Menu State Interaction and Top Scroll -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menuToggle');
@@ -123,12 +133,13 @@
             const menuClose = document.getElementById('menuClose');
             const scrollTopBtn = document.getElementById('floatingBackToTop');
 
-            // Responsive navigation actions handling logic
+            // Opens mobile overlay view
             menuToggle.addEventListener('click', function() {
                 mobileNav.classList.add('is-active');
-                document.body.style.overflow = 'hidden';
+                document.body.style.overflow = 'hidden'; // Prevents scrolling behind overlay
             });
 
+            // Closes mobile overlay view
             menuClose.addEventListener('click', function() {
                 mobileNav.classList.remove('is-active');
                 document.body.style.overflow = '';
