@@ -33,10 +33,21 @@
             text-align: center;
         }
 
-        /* Keep bullet lists aligned or centered neatly if desired */
+        /* Center-align bulleted list items and tags */
         .gi-bullet-list {
-            display: inline-block;
-            text-align: left;
+            list-style-position: inside;
+            padding-left: 0;
+            text-align: center;
+        }
+
+        .gi-bullet-list li {
+            text-align: center;
+        }
+
+        .gi-card-tag {
+            display: block;
+            text-align: center;
+            width: 100%;
         }
     </style>
 </head>
@@ -71,10 +82,12 @@
             </button>
         </div>
     </header>
-<!-- Global Floating Donate Button -->
-<a href="choices.html" class="global-floating-donate-btn" aria-label="Donate to ToCAWI">
-    <i class="fa-solid fa-heart"></i> Donate
-</a>
+
+    <!-- Global Floating Donate Button -->
+    <a href="choices.html" class="global-floating-donate-btn" aria-label="Donate to ToCAWI">
+        <i class="fa-solid fa-heart"></i> Donate
+    </a>
+
     <!-- Mobile Navigation Overlay -->
     <div class="mobile-nav-overlay" id="mobileNav">
         <button class="close-menu" id="menuClose" aria-label="Close Navigation Menu">
