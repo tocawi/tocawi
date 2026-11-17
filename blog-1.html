@@ -7,12 +7,16 @@
     <!-- Favicon for Search Results & Browser Tabs -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
+    <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome icons for 6.5.2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght=700;900&family=Inter:wght=400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="blog-post-page-body">
 
+    <!-- Header / Navigation Bar -->
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo-area">
@@ -23,6 +27,7 @@
                 </div>
             </a>
             
+            <!-- Desktop Navigation Links -->
             <nav class="desktop-nav">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About Us</a>
@@ -34,6 +39,7 @@
                 <a href="emergency.html" class="nav-link">Emergency Info</a>
             </nav>
 
+            <!-- Hamburger Button for Mobile Menu -->
             <button class="menu-toggle" id="menuToggle" aria-label="Open Navigation Menu">
                 <span class="hamburger-bar"></span>
                 <span class="hamburger-bar"></span>
@@ -41,10 +47,13 @@
             </button>
         </div>
     </header>
-<!-- Global Floating Donate Button -->
-<a href="choices.html" class="global-floating-donate-btn" aria-label="Donate to ToCAWI">
-    <i class="fa-solid fa-heart"></i> Donate
-</a>
+
+    <!-- Global Floating Donate Button -->
+    <a href="choices.html" class="global-floating-donate-btn" aria-label="Donate to ToCAWI">
+        <i class="fa-solid fa-heart"></i> Donate
+    </a>
+
+    <!-- Full-Screen Mobile Navigation Overlay -->
     <div class="mobile-nav-overlay" id="mobileNav">
         <button class="close-menu" id="menuClose" aria-label="Close Navigation Menu">
             <i class="fa-solid xmark-icon fa-xmark"></i>
@@ -182,13 +191,17 @@
         </div>
     </main>
 
+    <!-- Site Footer -->
     <footer class="site-footer">
         <div class="footer-container">
+            <!-- Footer Branding Identity -->
             <div class="footer-branding">
                 <img src="images/logo.png" alt="ToCAWI Badge" class="footer-logo-img">
                 <h2 class="footer-logo-title">ToCAWI</h2>
                 <p class="footer-logo-sub">Tails of Care Animal Welfare Initiative</p>
             </div>
+
+            <!-- Footer Contact Details -->
             <div class="footer-contact-details">
                 <p>Upperhill Gardens</p>
                 <p>P.O. Box 54052, 00200</p>
@@ -196,14 +209,18 @@
                 <p><a href="tel:+254180555462">0180555462</a></p>
                 <p><a href="mailto:thetailsofcare@gmail.com" class="footer-email">thetailsofcare@gmail.com</a></p>
             </div>
+
+            <!-- Social Links Grid Wrapper -->
             <div class="footer-social-wrapper">
                 <a href="https://www.facebook.com/people/Tails-of-Care-Animal-Welfare-Initiative/61591902594842/" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/thetailsofcare?utm_source=qr" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.youtube.com/channel/UC16gxPmCa0Cgtl37sV5Rrzg" class="social-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://x.com/tailsofcare" class="social-icon x-twitter" class="social-icon x-twitter" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://x.com/tailsofcare" class="social-icon x-twitter" aria-label="X Twitter"><i class="fab fa-x-twitter"></i></a>
                 <a href="https://www.linkedin.com/in/the-tails-of-care-92ab443bb/" class="social-icon linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://www.tiktok.com/@tailsofcare" class="social-icon tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             </div>
+
+            <!-- Copyright Declaration Text -->
             <div class="footer-copyright">
                 &copy; 2026 ToCAWI. All rights reserved. Registration Number: PBO/2026/NL-EEUW5E4
             </div>
@@ -211,18 +228,20 @@
         <div class="footer-accent-line"></div>
     </footer>
 
+    <!-- Back to Top Button -->
     <button id="floatingBackToTop" class="floating-top-btn" aria-label="Scroll Back To Top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
+    <!-- Unified Menu & Share Dropdown Actions Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Navigation Elements
             const menuToggle = document.getElementById('menuToggle');
             const mobileNav = document.getElementById('mobileNav');
             const menuClose = document.getElementById('menuClose');
             const scrollTopBtn = document.getElementById('floatingBackToTop');
 
-            // Responsive navigation actions handling logic
             menuToggle.addEventListener('click', function() {
                 mobileNav.classList.add('is-active');
                 document.body.style.overflow = 'hidden';
@@ -233,7 +252,7 @@
                 document.body.style.overflow = '';
             });
 
-            // Handle scroll positioning triggers for Back-to-Top Button Visibility
+            // Back to Top functionality
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 400) {
                     scrollTopBtn.classList.add('visible');
@@ -242,12 +261,8 @@
                 }
             });
 
-            // Smooth scroll action back up to page ceiling
             scrollTopBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
     </script>
